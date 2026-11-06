@@ -24,6 +24,7 @@ const events: RegencyEvent[] = [
 const nav = [{label:'Visão geral',icon:Landmark},{label:'Atlas histórico',icon:Map},{label:'Linha do tempo',icon:Clock3},{label:'Expedições',icon:Compass},{label:'Museu virtual',icon:BookOpen},{label:'Arquivo histórico',icon:BookOpen}];
 const layers = ['Política','Revoltas','Economia','Sociedade','Memória'];
 const availableLayers = ['Política','Revoltas'];
+const normalizeSearchText = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR').trim();
 
 export default function Home() {
  const [active,setActive]=useState('Visão geral');
@@ -31,7 +32,7 @@ export default function Home() {
  const [query,setQuery]=useState('');
  const [intro,setIntro]=useState(false);
  const [enabled,setEnabled]=useState(['Política','Revoltas']);
- const visible=useMemo(()=>events.filter(e=>e.year<=year && (query==='' || (e.title+' '+e.place+' '+e.category).toLowerCase().includes(query.toLowerCase()))),[year,query]);
+ const visible=useMemo(()=>{const term=normalizeSearchText(query);return events.filter(e=>e.year<=year && (!term || normalizeSearchText([e.year,e.endYear??'',e.title,e.place,e.category,e.text].join(' ')).includes(term)));},[year,query]);
  const eventsInSelectedYear=useMemo(()=>events.filter(e=>e.year===year || (typeof e.endYear==='number' && e.year<year && e.endYear>=year)),[year]);
  const ongoingMovements=useMemo(()=>events.filter(e=>typeof e.endYear==='number' && e.year<=year && e.endYear>=year),[year]);
  return <main className="shell">
