@@ -116,3 +116,25 @@ A primeira execução do GitHub Actions falhou na etapa de configuração do Nod
 Commits: `eaeeb9fe67c71db2c208eec2db9a7e199f209973` (agrupamento funcional) e `c15a87081b0a7e73f47c38f03d07324942486dd3` (estilo e acessibilidade).
 
 **Validação pendente:** conferir TypeScript/build no CI e confirmar publicação no Render. Não afirmar deploy concluído até o commit aparecer como `live`.
+
+## Auditoria de continuidade — 6 de novembro de 2026, 21:55 UTC
+
+### Verificação automatizada
+- Commit mais recente conferido no GitHub: `fc2ee29e8bcda69d8c106221a460e18299909f88`.
+- A execução do GitHub Actions associada a esse conjunto de alterações concluiu com sucesso: compilação Next.js, checagem de tipos TypeScript e geração das páginas estáticas.
+- O workflow ainda registra avisos de depreciação do runtime Node 20 usado pelas actions v4 e de uma dependência transitiva (`punycode`). Não são falhas da compilação; revisar a atualização das actions em tarefa própria.
+
+### Auditoria de publicação
+- O serviço Render continua configurado para acompanhar `main`, com `autoDeploy=yes` e gatilho por commit.
+- O último deploy efetivamente `live` continua sendo `77034b360d3b52615a4e52f1d0c1f456dc3190c2`, concluído às 21:18:01 UTC.
+- A consulta ao histórico de eventos do serviço não mostrou evento de build/deploy após 21:18 UTC, apesar dos commits posteriores no GitHub.
+- Portanto, o código mais recente está no GitHub e passou no CI, mas **a publicação dessas alterações no Render ainda não está confirmada**. Não disparar deploy manual enquanto auto deploy estiver habilitado; investigar primeiro a entrega do evento de commit/webhook e conferir novamente a lista de deploys.
+
+### Revisão técnica do mapa
+- O agrupamento de marcadores usa igualdade exata das coordenadas cadastradas; pontos apenas próximos não são fundidos.
+- A inicialização e a limpeza do MapLibre removem marcadores e instância do mapa no cleanup do efeito React.
+- A validação GeoJSON rejeita dados malformados, coordenadas fora de WGS84, anéis abertos, datas inválidas, fontes sem URL e feições sem revisão declarada.
+- A validação ainda não substitui uma verificação topológica especializada (por exemplo, auto-interseções e relações entre anéis). Nenhum polígono histórico foi publicado.
+- A coleção `regencyBoundaries` permanece vazia até que cartas específicas sejam identificadas, catalogadas e georreferenciadas com incerteza documentada.
+
+Este adendo prevalece sobre observações antigas deste documento que diziam que a execução do CI ainda estava em andamento ou que o critério de agrupamento era arredondado.
