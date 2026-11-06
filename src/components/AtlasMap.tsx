@@ -28,7 +28,7 @@ export default function AtlasMap({ events, year, layers }: Props) {
       minZoom: 2.5,
       maxZoom: 9,
       maxBounds: [[-82, -40], [-30, 15]],
-      attributionControl: true,
+      attributionControl: {},
       style: {
         version: 8,
         sources: {
