@@ -9,10 +9,13 @@ export type AtlasEvent = {
   title: string;
   place: string;
   category: string;
+  text?: string;
   coordinates: [number, number];
 };
 
 type Props = { events: AtlasEvent[]; year: number; layers: string[] };
+
+const escapeHtml = (value: string) => value.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character] ?? character);
 
 export default function AtlasMap({ events, year, layers }: Props) {
   const host = useRef<HTMLDivElement>(null);
