@@ -1,0 +1,25 @@
+name: Verificação do projeto
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Instalar dependências
+        run: npm install
+      - name: Verificar tipos TypeScript
+        run: npx tsc --noEmit
+      - name: Compilar aplicação Next.js
+        run: npm run build
