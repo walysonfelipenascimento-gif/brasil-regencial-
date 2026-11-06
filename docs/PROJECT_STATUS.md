@@ -98,3 +98,8 @@ Commits adicionais: `1ff7ae8a4dbe4eb69271abdaef87bf7ce97ecbb8` (CI), `6ecac3c992
 
 Continuar diretamente na Etapa 1. Prioridade principal: pesquisa cartográfica documental para identificar cartas provinciais específicas e produzir geometrias validadas. Em paralelo, aguardar/verificar a execução do CI, resolver o fluxo de deploy automático e testar a aplicação. Não declarar a etapa concluída enquanto as fronteiras históricas exigidas não tiverem fonte identificada e validação.
 
+
+
+## Correção da esteira de verificação — 6 de novembro de 2026
+
+A primeira execução do GitHub Actions falhou na etapa de configuração do Node.js porque o workflow solicitava cache npm sem que houvesse lockfile no repositório. A configuração foi corrigida removendo o cache dependente de lockfile. Commit da correção: `e9392016d79d3d84f6ad7f00b7d73c8b65b1cfba`. Na última consulta, a execução estava em andamento na instalação das dependências; TypeScript e build ainda não tinham sido executados. Acompanhar em https://github.com/walysonfelipenascimento-gif/brasil-regencial-/actions.
