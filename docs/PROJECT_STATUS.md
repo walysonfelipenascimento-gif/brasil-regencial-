@@ -138,3 +138,10 @@ Commits: `eaeeb9fe67c71db2c208eec2db9a7e199f209973` (agrupamento funcional) e `c
 - A coleção `regencyBoundaries` permanece vazia até que cartas específicas sejam identificadas, catalogadas e georreferenciadas com incerteza documentada.
 
 Este adendo prevalece sobre observações antigas deste documento que diziam que a execução do CI ainda estava em andamento ou que o critério de agrupamento era arredondado.
+
+## Continuidade — verificação posterior (6 de novembro de 2026)
+
+- Commit `20aa1482bfb759fcad3fd2682713269ef540f3db`: lista lateral de acontecimentos agora usa as mesmas camadas habilitadas que alimentam os marcadores do mapa. Ao desativar uma categoria, seus registros deixam também de aparecer na lista; a mensagem vazia explica como reativá-los.
+- GitHub Actions do commit `20aa1482`: concluído com sucesso. Também passaram os commits de documentação/auditoria `fb6843c5`, melhoria de busca `74222299` e ajuste CSS `fc2ee29e`.
+- O inventário provincial continua com 18 entradas catalogadas para pesquisa, mas sem geometrias validadas. O GeoJSON permanece deliberadamente vazio.
+- A publicação Render ainda não acompanha o HEAD do GitHub: último deploy `live` confirmado permanece `77034b3`. Não declarar as melhorias recentes disponíveis no site público até o Render confirmar o commit correspondente.
