@@ -56,3 +56,9 @@ Cada unidade territorial deverá ter:
 ## Próximo trabalho da Etapa 1
 
 Localizar e comparar cartas históricas do Império próximas a 1831–1840, selecionar uma fonte cartográfica adequada, registrar sua licença e avaliar o georreferenciamento. Só então produzir e validar os polígonos provinciais em GeoJSON/TopoJSON.
+
+## Atualização de interação temporal — novembro de 2026
+
+Os marcadores do atlas distinguem visualmente categorias políticas e revoltas. Quando o ano selecionado avança, movimentos cujo intervalo inclui esse ano recebem destaque de continuidade; registros já anteriores ficam visualmente atenuados. A janela de cada marcador informa se é um movimento em curso, um registro anterior ou um acontecimento do ano selecionado. Essa distinção é editorial e cronológica: não representa controle territorial, frente de batalha ou extensão geográfica.
+
+**Limite mantido:** a camada de polígonos provinciais permanece vazia até que cartas históricas identificáveis sejam localizadas, avaliadas e georreferenciadas com proveniência suficiente. A lista das 18 unidades continua sendo inventário de pesquisa, não mapa de fronteiras.
