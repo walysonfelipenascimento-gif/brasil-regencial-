@@ -28,7 +28,7 @@ export default function Home() {
  const [year,setYear]=useState(1835);
  const [query,setQuery]=useState('');
  const [intro,setIntro]=useState(false);
- const [enabled,setEnabled]=useState(['Território','Revoltas']);
+ const [enabled,setEnabled]=useState(['Política','Revoltas']);
  const visible=useMemo(()=>events.filter(e=>e.year<=year && (query==='' || (e.title+' '+e.place+' '+e.category).toLowerCase().includes(query.toLowerCase()))),[year,query]);
  return <main className="shell">
   <aside className="sidebar"><a className="brand" href="#"><span className="brandMark">BR</span><span><b>BRASIL</b><small>REGÊNCIAL</small></span></a><div className="sideCaption">EXPLORAR</div><nav>{nav.map(item=><button key={item.label} className={'navItem '+(active===item.label?'selected':'')} onClick={()=>setActive(item.label)}><item.icon size={17}/>{item.label}</button>)}</nav><div className="sidebarBottom"><span className="goldDot"/> 1831 — 1840<small>Um território, muitas histórias.</small></div></aside>
