@@ -7,12 +7,16 @@ import { regencyProvinces } from '@/data/provinces';
 
 const events = [
   { year: 1831, title: 'Abdicação de Dom Pedro I', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'A abdicação abriu o período de governo regencial durante a menoridade de Dom Pedro II.' },
+  { year: 1832, title: 'Código de Processo Criminal', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'Aprovado em 29 de novembro de 1832, reorganizou aspectos da justiça criminal e da administração judiciária no Império.' },
   { year: 1834, title: 'Ato Adicional', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'Reforma constitucional que alterou a organização político-administrativa do Império.' },
+  { year: 1835, title: 'Eleição de Diogo Antônio Feijó', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'Feijó foi eleito regente uno em 1835 e assumiu o governo em outubro daquele ano.' },
+  { year: 1837, title: 'Renúncia de Feijó e regência de Araújo Lima', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'Feijó deixou a Regência em setembro de 1837; Pedro de Araújo Lima assumiu interinamente e depois foi eleito regente uno.' },
   { year: 1835, title: 'Cabanagem', place: 'Belém, Grão-Pará', category: 'Revoltas', coordinates: [-48.5039, -1.4558] as [number, number], text: 'Movimento de grande participação popular iniciado em 1835.' },
   { year: 1835, title: 'Revolução Farroupilha', place: 'Porto Alegre e Rio Grande do Sul', category: 'Revoltas', coordinates: [-51.2300, -30.0346] as [number, number], text: 'Revolta iniciada em setembro de 1835 na província de São Pedro do Rio Grande do Sul; o conflito se prolongou para além do período regencial.' },
   { year: 1835, title: 'Revolta dos Malês', place: 'Salvador, Bahia', category: 'Revoltas', coordinates: [-38.5016, -12.9777] as [number, number], text: 'Levante protagonizado por africanos muçulmanos, escravizados e libertos.' },
   { year: 1837, title: 'Sabinada', place: 'Salvador, Bahia', category: 'Revoltas', coordinates: [-38.5016, -12.9777] as [number, number], text: 'Movimento político ocorrido na Bahia entre 1837 e 1838.' },
   { year: 1838, title: 'Balaiada', place: 'Região de Caxias, Maranhão', category: 'Revoltas', coordinates: [-43.3558, -4.8589] as [number, number], text: 'Revolta iniciada em 1838, com participação de diferentes grupos populares.' },
+  { year: 1839, title: 'República Juliana', place: 'Laguna, Santa Catarina', category: 'Revoltas', coordinates: [-48.7808, -28.4825] as [number, number], text: 'Proclamação de uma república em Laguna, em julho de 1839, no contexto da Revolução Farroupilha.' },
   { year: 1840, title: 'Golpe da Maioridade', place: 'Rio de Janeiro', category: 'Política', coordinates: [-43.1729, -22.9068] as [number, number], text: 'Antecipação da maioridade de Dom Pedro II, que encerrou o período regencial em julho de 1840.' }
 ];
 const nav = [{label:'Visão geral',icon:Landmark},{label:'Atlas histórico',icon:Map},{label:'Linha do tempo',icon:Clock3},{label:'Expedições',icon:Compass},{label:'Museu virtual',icon:BookOpen},{label:'Arquivo histórico',icon:BookOpen}];
