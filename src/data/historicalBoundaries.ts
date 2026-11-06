@@ -1,15 +1,16 @@
-import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
-
-/**
- * Limite administrativo histórico publicável.
- * Cada feição precisa apontar para uma carta/documento catalogado.
- * Não aceitar geometria sem fonte, recorte temporal e avaliação de precisão.
- */
-export type HistoricalBoundaryProperties = {
+type PolygonGeometry = { type: 'Polygon'; coordinates: number[][][] };
+type MultiPolygonGeometry = { type: 'MultiPolygon'; coordinates: number[][][][] };
+type HistoricalGeometry = PolygonGeometry | MultiPolygonGeometry;
+type HistoricalBoundaryFeature = {
+  type: 'Feature';
+  geometry: HistoricalGeometry;
+  properties: HistoricalBoundaryProperties;
+};
+type HistoricalBoundaryProperties = {
   provinceId: string;
   historicalName: string;
-  validFrom: string; // ISO 8601 (inclusive)
-  validTo: string;   // ISO 8601 (exclusive)
+  validFrom: string;
+  validTo: string;
   sourceId: string;
   sourceUrl: string;
   sourceDate: string;
@@ -21,14 +22,16 @@ export type HistoricalBoundaryProperties = {
   rmsError?: number;
   reviewedBy: string[];
 };
+type HistoricalBoundaryCollection = {
+  type: 'FeatureCollection';
+  features: HistoricalBoundaryFeature[];
+};
 
-export type HistoricalBoundaryFeature = Feature<
-  Polygon | MultiPolygon,
-  HistoricalBoundaryProperties
->;
-
-export type HistoricalBoundaryCollection =
-  FeatureCollection<Polygon | MultiPolygon, HistoricalBoundaryProperties>;
+/**
+ * Limite administrativo histórico publicável.
+ * Cada feição precisa apontar para uma carta/documento catalogado.
+ * Não aceitar geometria sem fonte, recorte temporal e avaliação de precisão.
+ */
 
 /** Coleção vazia intencional: nenhum polígono foi validado até o momento. */
 export const regencyBoundaries: HistoricalBoundaryCollection = {
