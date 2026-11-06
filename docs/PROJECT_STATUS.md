@@ -103,3 +103,16 @@ Continuar diretamente na Etapa 1. Prioridade principal: pesquisa cartográfica d
 ## Correção da esteira de verificação — 6 de novembro de 2026
 
 A primeira execução do GitHub Actions falhou na etapa de configuração do Node.js porque o workflow solicitava cache npm sem que houvesse lockfile no repositório. A configuração foi corrigida removendo o cache dependente de lockfile. Commit da correção: `e9392016d79d3d84f6ad7f00b7d73c8b65b1cfba`. Na última consulta, a execução estava em andamento na instalação das dependências; TypeScript e build ainda não tinham sido executados. Acompanhar em https://github.com/walysonfelipenascimento-gif/brasil-regencial-/actions.
+
+
+## Melhoria de navegação cartográfica — 6 de novembro de 2026
+
+- Marcadores com coordenadas coincidentes agora são agrupados em um único ponto interativo, evitando que acontecimentos no Rio de Janeiro e em Salvador fiquem visualmente sobrepostos.
+- O popup do grupo lista individualmente os acontecimentos, ordenados por ano, com categoria, intervalo, descrição e estado temporal.
+- O agrupamento usa somente coordenadas já cadastradas e arredondadas a quatro casas decimais para detectar coincidências; não desloca pontos nem sugere precisão geográfica adicional.
+- Marcadores agrupados exibem a quantidade de registros e recebem estilo/foco acessível.
+- Esta melhoria não altera a natureza aproximada das localizações nem cria fronteiras ou áreas de conflito.
+
+Commits: `eaeeb9fe67c71db2c208eec2db9a7e199f209973` (agrupamento funcional) e `c15a87081b0a7e73f47c38f03d07324942486dd3` (estilo e acessibilidade).
+
+**Validação pendente:** conferir TypeScript/build no CI e confirmar publicação no Render. Não afirmar deploy concluído até o commit aparecer como `live`.
