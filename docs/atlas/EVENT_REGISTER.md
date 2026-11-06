@@ -8,7 +8,7 @@
 - Datas e descrições devem ser conferidas em legislação, documentação de arquivo ou bibliografia acadêmica antes de receber o selo editorial de verificadas.
 - Os pontos no mapa indicam cidades ou localidades de referência, não a extensão territorial de conflitos, batalhas ou movimentos.
 - Um marcador não demonstra controle político, fronteira, área de influência ou itinerário.
-- Eventos com duração plurianual devem ter intervalo próprio quando a interface passar a suportar intervalos; o ano exibido hoje é o ano de início ou marco destacado.
+- Eventos com duração plurianual recebem ano inicial e final quando a cronologia permite delimitá-los; conflitos que ultrapassam 1840 devem manter esse término fora do recorte da Regência, sem sugerir que acabaram em 1840.
 - Distinguir a data de um ato legal, sua promulgação e seus efeitos.
 - Toda correção histórica deve registrar a fonte consultada e a data da revisão.
 
@@ -48,3 +48,16 @@ Estas instituições são pontos de partida para pesquisa. A inclusão nesta lis
 5. Submeter o catálogo a revisão editorial antes de remover o rótulo preliminar.
 
 **Estado atual:** os registros são úteis para navegação e orientação inicial. Não devem ser apresentados como inventário completo nem como fatos individualmente certificados por documentos no sistema.
+
+
+## Duração dos movimentos e conflitos
+
+A interface registra intervalos para movimentos de duração plurianual, sem reduzir conflitos a um único ano. Os términos posteriores a 1840 são mantidos quando pertinentes ao contexto histórico:
+
+- Cabanagem: 1835–1840.
+- Revolução Farroupilha: 1835–1845 (ultrapassa o Período Regencial).
+- Sabinada: 1837–1838.
+- Balaiada: 1838–1841 (ultrapassa o Período Regencial).
+- República Juliana: 1839–1840.
+
+Esses intervalos são referências cronológicas preliminares e continuam sujeitos à revisão bibliográfica antes de receberem selo de verificação documental.
