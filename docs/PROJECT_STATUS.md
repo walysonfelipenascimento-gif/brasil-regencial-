@@ -109,7 +109,7 @@ A primeira execução do GitHub Actions falhou na etapa de configuração do Nod
 
 - Marcadores com coordenadas coincidentes agora são agrupados em um único ponto interativo, evitando que acontecimentos no Rio de Janeiro e em Salvador fiquem visualmente sobrepostos.
 - O popup do grupo lista individualmente os acontecimentos, ordenados por ano, com categoria, intervalo, descrição e estado temporal.
-- O agrupamento usa somente coordenadas já cadastradas e arredondadas a quatro casas decimais para detectar coincidências; não desloca pontos nem sugere precisão geográfica adicional.
+- O agrupamento usa somente coordenadas já cadastradas e exatamente idênticas decimais para detectar coincidências; não desloca pontos nem sugere precisão geográfica adicional.
 - Marcadores agrupados exibem a quantidade de registros e recebem estilo/foco acessível.
 - Esta melhoria não altera a natureza aproximada das localizações nem cria fronteiras ou áreas de conflito.
 
