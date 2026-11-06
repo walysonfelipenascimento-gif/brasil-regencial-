@@ -22,11 +22,17 @@ As coordenadas abaixo são pontos de referência urbanos aproximados, não coord
 | Acontecimento | Ano | Ponto de referência | Coordenadas aproximadas | Observação |
 |---|---:|---|---|---|
 | Abdicação de Dom Pedro I | 1831 | Rio de Janeiro | -22.9068, -43.1729 | Cidade associada ao ato político |
+| Código de Processo Criminal | 1832 | Rio de Janeiro | -22.9068, -43.1729 | Sede do governo imperial |
 | Ato Adicional | 1834 | Rio de Janeiro | -22.9068, -43.1729 | Referência à sede do governo imperial |
 | Cabanagem | 1835 | Belém | -1.4558, -48.5039 | A revolta teve área de atuação mais ampla |
 | Revolta dos Malês | 1835 | Salvador | -12.9777, -38.5016 | Localização urbana de referência |
-| Sabinada | 1837 | Salvador | -12.9777, -38.5016 | Localização urbana de referência |
+| Revolução Farroupilha | 1835 | Porto Alegre | -30.0346, -51.2300 | Conflito com área de atuação ampla e duração além de 1840 |
+| Eleição de Diogo Antônio Feijó | 1835 | Rio de Janeiro | -22.9068, -43.1729 | Sede do governo imperial |
+| Renúncia de Feijó / regência de Araújo Lima | 1837 | Rio de Janeiro | -22.9068, -43.1729 | Sede do governo imperial |
+| Sabinada | 1837 | Salvador | -12.9777, -38.5016 | Movimento com duração até 1838 |
 | Balaiada | 1838 | Região de Caxias, Maranhão | -4.8589, -43.3558 | Movimento com área de atuação regional |
+| República Juliana | 1839 | Laguna | -28.4825, -48.7808 | No contexto da Revolução Farroupilha |
+| Golpe da Maioridade | 1840 | Rio de Janeiro | -22.9068, -43.1729 | Marco final do período regencial |
 
 ## Critérios para publicar as províncias históricas
 
