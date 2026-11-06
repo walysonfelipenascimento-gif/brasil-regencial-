@@ -6,6 +6,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 
 export type AtlasEvent = {
   year: number;
+  endYear?: number;
   title: string;
   place: string;
   category: string;
@@ -95,7 +96,7 @@ export default function AtlasMap({ events, year, layers }: Props) {
           : '';
         const popupContent =
           '<div class="eventPopup">' +
-            '<small class="eventPopupMeta">' + escapeHtml(String(event.year)) +
+            '<small class="eventPopupMeta">' + escapeHtml(event.endYear ? event.year + '–' + event.endYear : String(event.year)) +
               ' · ' + escapeHtml(event.category) + '</small>' +
             '<strong class="eventPopupTitle">' + escapeHtml(event.title) + '</strong>' +
             '<p class="eventPopupPlace">' + escapeHtml(event.place) + '</p>' +
