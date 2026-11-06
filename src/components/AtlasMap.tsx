@@ -85,7 +85,9 @@ export default function AtlasMap({ events, year, layers }: Props) {
     const filteredEvents = events.filter(event => event.year <= year && layers.includes(event.category));
     const grouped = new Map<string, AtlasEvent[]>();
     filteredEvents.forEach(event => {
-      const key = event.coordinates.map(value => value.toFixed(4)).join(',');
+      // Agrupar apenas coordenadas idênticas; proximidade não prova que dois registros
+      // pertencem à mesma localidade ou ao mesmo ponto histórico.
+      const key = event.coordinates.join(',');
       const group = grouped.get(key) ?? [];
       group.push(event);
       grouped.set(key, group);
