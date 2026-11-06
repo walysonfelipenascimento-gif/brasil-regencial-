@@ -8,3 +8,11 @@
 .provinceIntro{font-size:10px!important;line-height:1.55;color:#a9a394;margin:0 0 10px}.provinceList{max-height:220px;overflow:auto;display:grid;gap:0;border-top:1px solid rgba(201,169,107,.15);border-bottom:1px solid rgba(201,169,107,.15)}.provinceItem{padding:8px 2px;display:flex;flex-direction:column;gap:3px;border-bottom:1px solid rgba(255,255,255,.045)}.provinceItem:last-child{border-bottom:0}.provinceItem span{font-size:11px;color:#e7dfcf}.provinceItem small{font-size:9px;color:#b99a61}
 
 .atlasMap .eventPopup{display:grid;gap:6px;min-width:180px}.atlasMap .eventPopup>span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#c9a96b}.atlasMap .eventPopup strong{font:600 16px 'Playfair Display';line-height:1.25;color:#f3ecdf}.atlasMap .eventPopup small{font-size:10px;color:#d1c6ad}.atlasMap .eventPopup p{font-size:11px;line-height:1.55;color:#d4dbe0;margin:2px 0}.atlasMap .eventPopup em{font-size:9px;color:#a9b2b9;font-style:normal;border-top:1px solid rgba(201,169,107,.2);padding-top:6px}
+
+
+/* Atlas historical event popup */
+.atlasMap .eventPopup{display:grid;gap:7px;min-width:180px}
+.atlasMap .eventPopupMeta{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#c9a96b}
+.atlasMap .eventPopupTitle{font:600 16px 'Playfair Display',serif;line-height:1.25;color:#f3ecdf}
+.atlasMap .eventPopupPlace,.atlasMap .eventPopupText{font-size:11px;line-height:1.55;color:#d4dbe0;margin:0}
+.atlasMap .eventPopupNote{font-size:9px;line-height:1.45;color:#a9b2b9;border-top:1px solid rgba(201,169,107,.2);padding-top:7px}
