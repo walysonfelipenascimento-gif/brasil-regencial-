@@ -18,6 +18,8 @@ jobs:
           node-version: 20
       - name: Instalar dependências
         run: npm install
+      - name: Verificar qualidade e acessibilidade do código
+        run: npm run lint
       - name: Verificar tipos TypeScript
         run: npx tsc --noEmit
       - name: Compilar aplicação Next.js
