@@ -87,8 +87,11 @@ export default function AtlasMap({ events, year, layers }: Props) {
       .forEach(event => {
         const element = document.createElement('button');
         element.type = 'button';
-        element.className = 'atlasMarker';
-        element.setAttribute('aria-label', 'Abrir acontecimento: ' + event.title);
+        const isOngoing = typeof event.endYear === 'number' && event.year <= year && event.endYear >= year;
+        const isPast = event.year < year && !isOngoing;
+        const statusLabel = isOngoing ? 'movimento em curso no ano selecionado' : isPast ? 'registro anterior ao ano selecionado' : 'acontecimento do ano selecionado';
+        element.className = 'atlasMarker ' + (event.category === 'Revoltas' ? 'atlasMarker--revolt' : 'atlasMarker--politics') + (isOngoing ? ' atlasMarker--ongoing' : isPast ? ' atlasMarker--past' : '');
+        element.setAttribute('aria-label', 'Abrir acontecimento: ' + event.title + ', ' + statusLabel);
         element.innerHTML = '<span></span>';
 
         const description = event.text
@@ -101,6 +104,7 @@ export default function AtlasMap({ events, year, layers }: Props) {
             '<strong class="eventPopupTitle">' + escapeHtml(event.title) + '</strong>' +
             '<p class="eventPopupPlace">' + escapeHtml(event.place) + '</p>' +
             description +
+            '<small class="eventPopupStatus">' + escapeHtml(statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1)) + '</small>' +
             '<small class="eventPopupNote">Localização aproximada de referência; não indica extensão territorial.</small>' +
           '</div>';
 
