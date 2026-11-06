@@ -82,42 +82,75 @@ export default function AtlasMap({ events, year, layers }: Props) {
     markers.current.forEach(marker => marker.remove());
     markers.current = [];
 
-    events
-      .filter(event => event.year <= year && layers.includes(event.category))
-      .forEach(event => {
-        const element = document.createElement('button');
-        element.type = 'button';
-        const isOngoing = typeof event.endYear === 'number' && event.year <= year && event.endYear >= year;
-        const isPast = event.year < year && !isOngoing;
-        const statusLabel = isOngoing ? 'movimento em curso no ano selecionado' : isPast ? 'registro anterior ao ano selecionado' : 'acontecimento do ano selecionado';
-        element.className = 'atlasMarker ' + (event.category === 'Revoltas' ? 'atlasMarker--revolt' : 'atlasMarker--politics') + (isOngoing ? ' atlasMarker--ongoing' : isPast ? ' atlasMarker--past' : '');
-        element.setAttribute('aria-label', 'Abrir acontecimento: ' + event.title + ', ' + statusLabel);
-        element.innerHTML = '<span></span>';
+    const filteredEvents = events.filter(event => event.year <= year && layers.includes(event.category));
+    const grouped = new Map<string, AtlasEvent[]>();
+    filteredEvents.forEach(event => {
+      const key = event.coordinates.map(value => value.toFixed(4)).join(',');
+      const group = grouped.get(key) ?? [];
+      group.push(event);
+      grouped.set(key, group);
+    });
 
-        const description = event.text
-          ? '<p class="eventPopupText">' + escapeHtml(event.text) + '</p>'
-          : '';
-        const popupContent =
-          '<div class="eventPopup">' +
+    grouped.forEach(group => {
+      const [longitude, latitude] = group[0].coordinates;
+      const hasRevolt = group.some(event => event.category === 'Revoltas');
+      const hasOngoing = group.some(event => typeof event.endYear === 'number' && event.year <= year && event.endYear >= year);
+      const allPast = group.every(event => event.year < year && !(typeof event.endYear === 'number' && event.endYear >= year));
+      const statusLabel = hasOngoing
+        ? 'inclui movimento em curso no ano selecionado'
+        : allPast
+          ? 'registros anteriores ao ano selecionado'
+          : 'inclui acontecimento do ano selecionado';
+      const element = document.createElement('button');
+      element.type = 'button';
+      element.className = 'atlasMarker ' +
+        (hasRevolt ? 'atlasMarker--revolt' : 'atlasMarker--politics') +
+        (hasOngoing ? ' atlasMarker--ongoing' : allPast ? ' atlasMarker--past' : '') +
+        (group.length > 1 ? ' atlasMarker--group' : '');
+      element.setAttribute(
+        'aria-label',
+        'Abrir ' + group.length + ' registro(s) em ' + group[0].place + '; ' + statusLabel
+      );
+      element.innerHTML = group.length > 1 ? '<span>' + group.length + '</span>' : '<span></span>';
+
+      const popupItems = group
+        .slice()
+        .sort((a, b) => a.year - b.year || a.title.localeCompare(b.title, 'pt-BR'))
+        .map(event => {
+          const isOngoing = typeof event.endYear === 'number' && event.year <= year && event.endYear >= year;
+          const isPast = event.year < year && !isOngoing;
+          const eventStatus = isOngoing
+            ? 'Movimento em curso no ano selecionado'
+            : isPast
+              ? 'Registro anterior ao ano selecionado'
+              : 'Acontecimento do ano selecionado';
+          const description = event.text
+            ? '<p class="eventPopupText">' + escapeHtml(event.text) + '</p>'
+            : '';
+          return '<article class="eventPopupItem">' +
             '<small class="eventPopupMeta">' + escapeHtml(event.endYear ? event.year + '–' + event.endYear : String(event.year)) +
               ' · ' + escapeHtml(event.category) + '</small>' +
             '<strong class="eventPopupTitle">' + escapeHtml(event.title) + '</strong>' +
             '<p class="eventPopupPlace">' + escapeHtml(event.place) + '</p>' +
             description +
-            '<small class="eventPopupStatus">' + escapeHtml(statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1)) + '</small>' +
-            '<small class="eventPopupNote">Localização aproximada de referência; não indica extensão territorial.</small>' +
-          '</div>';
+            '<small class="eventPopupStatus">' + eventStatus + '</small>' +
+            '</article>';
+        }).join('<div class="eventPopupDivider"></div>');
+      const popupContent =
+        '<div class="eventPopup eventPopupGroup">' + popupItems +
+          '<small class="eventPopupNote">Ponto aproximado de referência da localidade; não indica extensão territorial.</small>' +
+        '</div>';
 
-        const popup = new maplibregl.Popup({ offset: 18, closeButton: true, maxWidth: '310px' })
-          .setHTML(popupContent);
+      const popup = new maplibregl.Popup({ offset: 18, closeButton: true, maxWidth: '330px' })
+        .setHTML(popupContent);
 
-        markers.current.push(
-          new maplibregl.Marker({ element, anchor: 'center' })
-            .setLngLat(event.coordinates)
-            .setPopup(popup)
-            .addTo(instance)
-        );
-      });
+      markers.current.push(
+        new maplibregl.Marker({ element, anchor: 'center' })
+          .setLngLat([longitude, latitude])
+          .setPopup(popup)
+          .addTo(instance)
+      );
+    });
   }, [events, year, layers]);
 
   return (
