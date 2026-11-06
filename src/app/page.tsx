@@ -30,7 +30,7 @@ export default function Home() {
  const [intro,setIntro]=useState(false);
  const [enabled,setEnabled]=useState(['Política','Revoltas']);
  const visible=useMemo(()=>events.filter(e=>e.year<=year && (query==='' || (e.title+' '+e.place+' '+e.category).toLowerCase().includes(query.toLowerCase()))),[year,query]);
- const eventsInSelectedYear=useMemo(()=>events.filter(e=>e.year<=year && (!('endYear' in e) || !e.endYear || e.endYear>=year)),[year]);
+ const eventsInSelectedYear=useMemo(()=>events.filter(e=>e.year===year || ('endYear' in e && Boolean(e.endYear) && e.year<year && e.endYear!>=year)),[year]);
  return <main className="shell">
   <aside className="sidebar"><a className="brand" href="#"><span className="brandMark">BR</span><span><b>BRASIL</b><small>REGENCIAL</small></span></a><div className="sideCaption">EXPLORAR</div><nav>{nav.map(item=><button key={item.label} className={'navItem '+(active===item.label?'selected':'')} onClick={()=>setActive(item.label)}><item.icon size={17}/>{item.label}</button>)}</nav><div className="sidebarBottom"><span className="goldDot"/> 1831 — 1840<small>Um território, muitas histórias.</small></div></aside>
   <section className="mainArea"><header className="topbar"><div className="mobileBrand"><span className="brandMark">BR</span><b>BRASIL REGENCIAL</b></div><div className="breadcrumb">MUSEU DIGITAL <span>/</span> {active.toUpperCase()}</div><span className="periodTag">1831 — 1840</span></header>
