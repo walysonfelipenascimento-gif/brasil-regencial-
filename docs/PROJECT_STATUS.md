@@ -84,6 +84,17 @@ O último deploy anteriormente confirmado como `live` foi o commit `77034b360d3b
 - `964d7142314ecbf4ecd6d9bf8ed70d8fba4df08b` — legenda e contexto temporal do atlas.
 - `bab5aed6fd4d3a1989281831ce32f80e3e710b65` — acabamento da legenda e resumo anual.
 
+## Atualização de implementação — 6 de novembro de 2026
+
+- Marcadores do mapa agora distinguem Política e Revoltas, movimentos em curso e registros anteriores ao ano selecionado.
+- Popups identificam o estado temporal e reiteram que os pontos são referências aproximadas.
+- A legenda do atlas identifica as categorias e o resumo anual informa quantos movimentos estão ativos no intervalo selecionado.
+- Busca ganhou rótulo acessível, ação para limpar o termo e estado vazio quando não há resultados.
+- Foi adicionado GitHub Actions em `.github/workflows/ci.yml` para executar `npx tsc --noEmit` e `npm run build` em pushes e pull requests para `main`. Ainda não há resultado de execução confirmado.
+
+Commits adicionais: `1ff7ae8a4dbe4eb69271abdaef87bf7ce97ecbb8` (CI), `6ecac3c992a920777854c4fd4dfe41a296889005` (busca e estado vazio), `56f41278ae268e9d9a08678a29a1bd49d76fc298` (estilo da busca).
+
 ## Próxima retomada
 
-Continuar diretamente na Etapa 1. Prioridade principal: pesquisa cartográfica documental e solução do fluxo de deploy automático. Em paralelo, testar e corrigir a aplicação sem inventar fronteiras ou alegar publicação não confirmada.
+Continuar diretamente na Etapa 1. Prioridade principal: pesquisa cartográfica documental para identificar cartas provinciais específicas e produzir geometrias validadas. Em paralelo, aguardar/verificar a execução do CI, resolver o fluxo de deploy automático e testar a aplicação. Não declarar a etapa concluída enquanto as fronteiras históricas exigidas não tiverem fonte identificada e validação.
+
