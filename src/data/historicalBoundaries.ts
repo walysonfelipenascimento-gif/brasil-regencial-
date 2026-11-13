@@ -22,6 +22,7 @@ type HistoricalBoundaryProperties = {
   controlPointCount: number;
   rmsError?: number;
   reviewedBy: string[];
+  publicationStatus: 'draft' | 'under_review' | 'approved';
 };
 type HistoricalBoundaryCollection = {
   type: 'FeatureCollection';
@@ -129,6 +130,9 @@ export function validateHistoricalBoundary(feature: unknown): string[] {
   }
 
   const p = feature.properties;
+  if (!['draft', 'under_review', 'approved'].includes(String(p.publicationStatus))) {
+    errors.push('status editorial inválido; use draft, under_review ou approved');
+  }
   if (!isNonEmptyString(p.provinceId)) errors.push('provinceId ausente');
   if (!isNonEmptyString(p.historicalName)) errors.push('nome histórico ausente');
   if (!isNonEmptyString(p.sourceId)) errors.push('identificador da fonte ausente');
@@ -171,4 +175,41 @@ export function validateHistoricalBoundary(feature: unknown): string[] {
   }
 
   return errors;
+}
+
+
+/**
+ * Retorna somente feições editorialmente aprovadas e estruturalmente válidas.
+ * Rascunhos e itens em revisão nunca chegam à camada pública do atlas.
+ */
+export function getPublishableHistoricalBoundaries(
+  collection: HistoricalBoundaryCollection
+): HistoricalBoundaryCollection {
+  return {
+    type: 'FeatureCollection',
+    features: collection.features.filter(feature =>
+      feature.properties.publicationStatus === 'approved' &&
+      validateHistoricalBoundary(feature).length === 0
+    )
+  };
+}
+
+/** Diagnóstico para revisão editorial; não altera nem corrige os dados recebidos. */
+export function auditHistoricalBoundaryCollection(
+  collection: HistoricalBoundaryCollection
+): { total: number; publishable: number; withheld: number; issues: { provinceId: string; errors: string[] }[] } {
+  const issues = collection.features.flatMap(feature => {
+    const errors = validateHistoricalBoundary(feature);
+    if (feature.properties.publicationStatus !== 'approved') {
+      errors.push('feição não aprovada para publicação');
+    }
+    return errors.length ? [{ provinceId: feature.properties.provinceId, errors }] : [];
+  });
+  const publishable = collection.features.length - issues.length;
+  return {
+    total: collection.features.length,
+    publishable,
+    withheld: collection.features.length - publishable,
+    issues
+  };
 }
