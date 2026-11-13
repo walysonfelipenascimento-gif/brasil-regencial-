@@ -239,3 +239,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - As prévias em resolução média não permitem ler com segurança os nomes provinciais, os valores de escala ou a legenda. Uma grade aparece em parte da folha superior direita; um bloco de escala/explicação aparece na inferior direita, mas seus valores não são legíveis na prévia.
 - O IMS disponibiliza versões grandes para download em cada ficha. A extração de limites fica suspensa até examinar essas versões e fazer o encaixe das margens.
 - Nenhum polígono foi gerado a partir das prévias. O catálogo mantém as quatro folhas como inspeção visual pendente.
+
+
+## Continuidade — mesa interativa para composição cartográfica
+
+- Criado `src/components/CartographicWorkbench.tsx` e integrado ao painel do Atlas.
+- O usuário pode selecionar as quatro folhas do mapa de 1831, ver cada prévia e acessar a ficha e o download em alta resolução no IMS.
+- A mesa mostra os metadados específicos da folha selecionada e deixa explícito que alinhamento e georreferenciamento continuam pendentes.
+- CSS responsivo adicionado para seleção 2×2, prévia ampliada e ficha técnica.
+- A interface não cria nem simula limites provinciais; prepara a inspeção das imagens originais.
