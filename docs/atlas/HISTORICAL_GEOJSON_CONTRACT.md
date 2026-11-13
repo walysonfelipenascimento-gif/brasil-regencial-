@@ -30,3 +30,10 @@ Este contrato define o que o atlas aceita como geometria provincial do intervalo
 - Geometrias provinciais validadas: nenhuma.
 - Coleção GeoJSON: vazia intencionalmente.
 - Próximo bloqueio real: localizar e fichar cartas históricas, comparar datas/versões e somente então georreferenciar.
+
+
+## Registro de pontos de controle para georreferenciamento
+
+Criado `src/data/cartographicControlPoints.ts` com tipo explícito e validador defensivo para pontos de controle. Cada registro exige identificação da folha e da fonte, descrição do detalhe reconhecido, pixel na imagem original, coordenadas WGS84/EPSG:4326, fonte da coordenada, método de identificação, confiança e revisores. Incerteza métrica é opcional quando ainda não mensurável; pontos de baixa confiança exigem nota explicativa.
+
+A coleção `cartographicControlPoints` permanece vazia. O validador verifica formato e faixas de coordenadas, mas não prova que o ponto foi identificado corretamente nem calcula erro de transformação. A coleta real depende dos arquivos grandes do IMS e de conferência independente.
