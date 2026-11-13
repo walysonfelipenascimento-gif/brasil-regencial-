@@ -231,3 +231,11 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - O IHGRGS confirmou o título e autoria do mapa de teatro da guerra de Nicolau Dreys (1839), com imagem digital acessível. A obra associada também foi conferida no catálogo BBM/USP; o PDF é de 57,84 MB e o registro mantém direitos reservados salvo indicação em contrário.
 - O catálogo técnico agora tem **11 registros cartográficos**: seis registros/folhas da série Schlieben (incluindo três folhas Stanford de 1826 e uma folha regional ainda catalogada por agregadores); quatro folhas da carta oriental de 1831; carta provincial de São Pedro de 1839; e mapa temático de Dreys de 1839. (A contagem por fonte e por folha deve ser entendida conforme os itens cadastrados no código; o total exato é o comprimento do catálogo.)
 - Imagens e downloads diretos foram adicionados ao painel quando o acervo os disponibiliza. Direitos são respeitados por registro: Stanford CC BY-NC-SA 3.0; IMS domínio público com atribuição; os demais exigem consulta aos termos do custodiante.
+
+
+## Continuidade — leitura preliminar das quatro folhas do IMS
+
+- A inspeção visual dos quatro registros do IMS confirmou que as folhas formam uma composição coerente do Brasil oriental, com continuidade geral de costa, rios e relevo.
+- As prévias em resolução média não permitem ler com segurança os nomes provinciais, os valores de escala ou a legenda. Uma grade aparece em parte da folha superior direita; um bloco de escala/explicação aparece na inferior direita, mas seus valores não são legíveis na prévia.
+- O IMS disponibiliza versões grandes para download em cada ficha. A extração de limites fica suspensa até examinar essas versões e fazer o encaixe das margens.
+- Nenhum polígono foi gerado a partir das prévias. O catálogo mantém as quatro folhas como inspeção visual pendente.
