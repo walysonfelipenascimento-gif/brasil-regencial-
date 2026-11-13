@@ -296,6 +296,22 @@ export function getPublishableHistoricalBoundaries(
   };
 }
 
+/** Recorta feições pelo ano usando intervalo cartográfico [início, fim). */
+export function getHistoricalBoundariesForYear(
+  collection: HistoricalBoundaryCollection,
+  year: number
+): HistoricalBoundaryCollection {
+  const yearStart = year + '-01-01';
+  const nextYearStart = (year + 1) + '-01-01';
+  return {
+    type: 'FeatureCollection',
+    features: collection.features.filter(feature =>
+      feature.properties.validFrom < nextYearStart &&
+      feature.properties.validTo > yearStart
+    )
+  };
+}
+
 /** Diagnóstico para revisão editorial; não altera nem corrige os dados recebidos. */
 export function auditHistoricalBoundaryCollection(
   collection: HistoricalBoundaryCollection
