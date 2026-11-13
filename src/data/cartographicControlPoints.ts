@@ -199,6 +199,9 @@ export function createGeoreferencedPolygon(
   if (typeof uncertaintyNote !== 'string' || !uncertaintyNote.trim()) errors.push('Registre a incerteza e as limitações da geometria.');
   if (errors.length) return { valid: false, errors };
 
+  const sourceIds = new Set(points.map(point => point.sourceId));
+  const sheetIds = new Set(points.map(point => point.sheetId));
+  if (sourceIds.size !== 1 || sheetIds.size !== 1) return { valid: false, errors: ['Todos os pontos e vértices devem pertencer à mesma fonte e folha cartográfica.'] };
   const fit = calculateAffineFit(points);
   if (!fit.valid) return { valid: false, errors: fit.errors };
   const independent = validateAffineIndependently(points);
