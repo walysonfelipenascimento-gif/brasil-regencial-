@@ -273,3 +273,13 @@ Foi criada a interface `src/components/CartographicWorkbench.tsx`, integrada ao 
 - A interface usa as URLs de prévia e download já catalogadas; não copia as imagens para o repositório nem presume autorização além do domínio público informado pelo IMS.
 
 **Próximo procedimento técnico:** obter os quatro arquivos grandes; conferir resolução, orientação e margens; testar alinhamento por feições comuns; registrar transformações e pontos de controle. Só após isso será possível preparar o mosaico e avaliar o georreferenciamento.
+
+
+## Mosaico de referência interativo — revisão da mesa de cartografia
+
+A mesa agora oferece dois modos:
+
+1. **Mosaico 2 × 2:** apresenta as quatro prévias na ordem de folha superior esquerda, superior direita, inferior esquerda e inferior direita. Cada imagem é exibida com `background-size: contain` para evitar cortes de borda e perda de conteúdo nas miniaturas. Selecionar uma folha abre sua inspeção individual.
+2. **Inspecionar folha:** exibe a prévia selecionada, alternância direta entre as quatro folhas, metadados, ficha de acervo e link de download da versão grande.
+
+A composição 2 × 2 é uma disposição de referência baseada nas posições descritas pelo catálogo, **não um mosaico de pixels já alinhado**. A verificação automática dos quatro endpoints de download grande não foi concluída porque o navegador de pesquisa retornou `target_unreachable`; por isso, os arquivos grandes ainda não foram obtidos nesta etapa. A interface não afirma que o encaixe ou a georreferência estejam prontos.
