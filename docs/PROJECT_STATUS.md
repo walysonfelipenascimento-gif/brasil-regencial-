@@ -248,3 +248,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - A mesa mostra os metadados específicos da folha selecionada e deixa explícito que alinhamento e georreferenciamento continuam pendentes.
 - CSS responsivo adicionado para seleção 2×2, prévia ampliada e ficha técnica.
 - A interface não cria nem simula limites provinciais; prepara a inspeção das imagens originais.
+
+
+## Atualização da mesa cartográfica — modos mosaico e inspeção
+
+- A mesa das quatro folhas agora tem alternância entre mosaico de referência 2 × 2 e inspeção individual.
+- As prévias preservam a proporção e deixam de ser cortadas para preencher miniaturas.
+- Selecionar uma folha no mosaico abre sua inspeção; a inspeção permite alternar entre as quatro folhas, consultar metadados, ficha e link de download.
+- O mosaico é explicitamente apresentado como disposição de referência, não como composição georreferenciada ou encaixe de pixels.
+- A tentativa de verificar os quatro endpoints de download em alta resolução retornou `target_unreachable`; não se afirma que os arquivos grandes foram baixados.
