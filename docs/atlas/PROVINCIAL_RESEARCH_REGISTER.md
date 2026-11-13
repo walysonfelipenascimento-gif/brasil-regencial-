@@ -245,3 +245,18 @@ A Mapoteca do Instituto Histórico e Geográfico do Rio Grande do Sul confirmou 
 - A Biblioteca Brasiliana Guita e José Mindlin/USP cataloga a obra de Dreys, publicada por J. Villeneuve no Rio de Janeiro em 1839, com xv, 216 páginas e mapa anexo: https://digital.bbm.usp.br/handle/bbm/7854 . O PDF do exemplar tem 57,84 MB e os direitos são reservados salvo indicação em contrário.
 - **Distinção:** o mapa de Dreys é temático do teatro da guerra; não deve ser usado como limite administrativo provincial.
 
+
+
+## Inspeção preliminar das quatro folhas do IMS — limites da leitura em resolução média
+
+O visualizador do IMS foi percorrido para os quatro registros. A inspeção confirma uma composição cartográfica coerente, mas **não permite ler com segurança os nomes provinciais e os detalhes finos na prévia de resolução média**.
+
+- Folha superior esquerda (89321): contornos, relevo e bloco de título visíveis; nomes de localidades e províncias muito pequenos/faintes na prévia.
+- Folha superior direita (89322): costa, rios/tributários e hachuras de relevo visíveis; aparece uma grade retangular sobre parte da folha, mas não foram lidos valores de coordenadas.
+- Folha inferior direita (89323): rios em azul, relevo hachurado e três mapas de detalhe; o relatório visual detectou escala gráfica e bloco explicativo, mas os valores não são legíveis na prévia.
+- Folha inferior esquerda (89324): a posição e o catálogo confirmam a peça complementar; a prévia não permitiu transcrever com segurança os nomes ou detalhes.
+- A composição de quatro folhas é confirmada pelos títulos, posições, técnica e continuidade geográfica geral. O encaixe preciso de bordas ainda precisa ser verificado com os arquivos grandes.
+- O IMS oferece download em versão grande em cada ficha. O próximo procedimento é obter essas versões, comparar as margens e ler legenda/escala e topônimos em resolução suficiente.
+
+**Decisão:** não extrair fronteiras provinciais das prévias médias. A série permanece em inspeção visual pendente até que as versões grandes sejam examinadas e as linhas possam ser distinguidas de rios, relevo, molduras e outras convenções.
+
