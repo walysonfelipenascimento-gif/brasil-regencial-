@@ -35,3 +35,8 @@
 .atlasMap .eventPopupDivider{height:1px;background:rgba(201,169,107,.22);margin:9px 0}
 .atlasMap .eventPopupGroup .eventPopupNote{display:block;margin-top:9px}
 .atlasMarker:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+
+/* Navegação compacta para dispositivos móveis: substitui a sidebar oculta. */
+.mobileNav{display:none}
+@media(max-width:650px){.mobileNav{display:flex;gap:7px;overflow-x:auto;padding:9px 14px;background:#101923;border-bottom:1px solid var(--line);scrollbar-width:thin}.mobileNavItem{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:9px 11px;border:1px solid transparent;background:transparent;color:#9ba7b2;font-size:10px;white-space:nowrap}.mobileNavItem.selected{border-color:rgba(201,169,107,.35);background:#202d38;color:var(--gold)}.mobileNavItem:focus-visible,.navItem:focus-visible{outline:2px solid var(--gold);outline-offset:2px}}
