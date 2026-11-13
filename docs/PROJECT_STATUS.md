@@ -164,3 +164,13 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Commits: `696c939cbfd1c225424421b90db1e9fb16809cda` (estrutura da Home) e `b4454080db8951b2467f56eb4f1e3ec0922700fe` (estilos da Home).
 - Verificações CI das duas alterações: execuções `43459857038` e `43459895632`; estavam em andamento na última consulta.
 - A Home refinada não altera o critério de conclusão da Etapa 1. O atlas ainda não pode ser declarado historicamente completo sem cartas provinciais de época ou reconstruções georreferenciadas com fontes identificadas, controle de qualidade e revisão. Não serão usados limites estaduais atuais como substitutos.
+
+
+## Pesquisa cartográfica ampliada e catálogo no Atlas — 13 de novembro de 2026
+
+- A pesquisa com TinyFish identificou cartas primárias e registros cartográficos específicos: folhas provinciais de Schlieben (1830) para Pará e Mato Grosso; mapa do Brasil oriental em quatro folhas de Eschwege/Martius/Schwarzmann (1831); carta da Província de São Pedro (1839); e mapa do teatro da guerra farroupilha de Nicolau Dreys (1839).
+- Metadados, URLs persistentes, cobertura, escala conhecida, direitos/limitações e estado de análise foram registrados em `src/data/cartographicSources.ts`.
+- O painel lateral do Atlas agora apresenta as fontes cartográficas, com ano, autores, acervo, cobertura, escala e estado de processamento. Os registros não são apresentados como polígonos prontos.
+- O *Atlas do Império do Brasil* de Cândido Mendes é de 1868; será tratado apenas como fonte comparativa posterior, nunca como retrato direto da Regência.
+- **Estado da Etapa 1:** avançou de ausência de cartas específicas para catálogo de fontes primárias verificáveis. Ainda não concluída: as imagens precisam ser inspecionadas, as séries de folhas completadas, as cartas georreferenciadas e as geometrias validadas; cronologia e coordenadas dos eventos também exigem revisão documental.
+- Nenhum polígono provincial foi inventado ou publicado nesta atualização.
