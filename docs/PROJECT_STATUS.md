@@ -155,3 +155,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - As alterações de navegação dispararam novas execuções de CI: `43459560590` e `43459564811`. No momento desta atualização, ambas ainda não tinham resultado final; conferir antes de considerar a alteração validada.
 - O deploy Render permanece sem confirmação para os commits recentes. O serviço ainda informa auto deploy habilitado; não disparar manualmente enquanto essa configuração estiver ativa. Último commit live conhecido: `77034b360d3b52615a4e52f1d0c1f456dc3190c2`.
 - A camada de fronteiras provinciais e a revisão documental dos eventos continuam como bloqueios históricos reais da Etapa 1. A barra móvel melhora o acesso à interface, mas não altera o estado de conclusão da etapa.
+
+## Página inicial — refinamento visual (13 de novembro de 2026)
+
+- A abertura da Visão geral foi redesenhada com hierarquia editorial, composição em duas colunas, ilustração abstrata de bússola/cartografia (explicitamente decorativa, não é mapa histórico), chamadas de acesso ao Atlas e apresentação do projeto.
+- Incluída faixa de indicadores com rótulos cautelosos: 10 anos do recorte; 18 unidades no inventário administrativo inicial (não são polígonos validados); 12 registros cronológicos preliminares.
+- A página inicial recebeu ajustes próprios para telas pequenas, foco visível e respeito à preferência por movimento reduzido.
+- Commits: `696c939cbfd1c225424421b90db1e9fb16809cda` (estrutura da Home) e `b4454080db8951b2467f56eb4f1e3ec0922700fe` (estilos da Home).
+- Verificações CI das duas alterações: execuções `43459857038` e `43459895632`; estavam em andamento na última consulta.
+- A Home refinada não altera o critério de conclusão da Etapa 1. O atlas ainda não pode ser declarado historicamente completo sem cartas provinciais de época ou reconstruções georreferenciadas com fontes identificadas, controle de qualidade e revisão. Não serão usados limites estaduais atuais como substitutos.
