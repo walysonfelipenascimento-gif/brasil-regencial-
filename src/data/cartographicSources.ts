@@ -6,7 +6,7 @@ export type CartographicSource = {
   institution: string;
   url: string;
   imageUrl?: string;
-  downloadUrl?: string;
+  downloadUrl?: string;\n  highResolutionUrl?: string;
   licenseUrl?: string;
   coverage: string;
   scale?: string;
@@ -106,6 +106,7 @@ export const cartographicSources: CartographicSource[] = [
   },
   {
     id: 'martius-eschwege-east-brazil-1831',
+    highResolutionUrl: 'https://acervos.ims.com.br/service.php/File/20025_ca_object_representations_media_60356_large.jpg',
     title: 'Karte von Ost-Brasilien — folha superior esquerda (série de quatro folhas)',
     authors: 'Wilhelm Ludwig von Eschwege, Carl Friedrich Philipp von Martius e Joseph Anton Schwarzmann',
     year: 1831,
@@ -123,6 +124,7 @@ export const cartographicSources: CartographicSource[] = [
   },
   {
     id: 'martius-eschwege-east-brazil-1831-upper-right',
+    highResolutionUrl: 'https://acervos.ims.com.br/service.php/File/50129_ca_object_representations_media_60357_large.jpg',
     title: 'Karte von Ost-Brasilien — folha superior direita',
     authors: 'Carl Friedrich Philipp von Martius, Wilhelm Ludwig von Eschwege e Joseph Anton Schwarzmann; editores Martius e Johann Baptist von Spix; impressão M. Lindauer',
     year: 1831,
@@ -140,6 +142,7 @@ export const cartographicSources: CartographicSource[] = [
   },
   {
     id: 'martius-eschwege-east-brazil-1831-lower-right',
+    highResolutionUrl: 'https://acervos.ims.com.br/service.php/File/13610_ca_object_representations_media_60358_large.jpg',
     title: 'Karte von Ost-Brasilien — folha inferior direita',
     authors: 'Carl Friedrich Philipp von Martius, Wilhelm Ludwig von Eschwege e Joseph Anton Schwarzmann; editores Martius e Johann Baptist von Spix; impressão M. Lindauer',
     year: 1831,
@@ -157,6 +160,7 @@ export const cartographicSources: CartographicSource[] = [
   },
   {
     id: 'martius-eschwege-east-brazil-1831-lower-left',
+    highResolutionUrl: 'https://acervos.ims.com.br/service.php/File/16555_ca_object_representations_media_60359_large.jpg',
     title: 'Karte von Ost-Brasilien — folha inferior esquerda',
     authors: 'Carl Friedrich Philipp von Martius, Wilhelm Ludwig von Eschwege e Joseph Anton Schwarzmann; editores Martius e Johann Baptist von Spix; impressão M. Lindauer',
     year: 1831,
