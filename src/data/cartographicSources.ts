@@ -120,7 +120,7 @@ export const cartographicSources: CartographicSource[] = [
     format: 'Gravura/litografia sobre papel; suporte 70 × 52,2 cm; mancha 47,8 × 45,5 cm; imagem grande 4134 × 5591 px',
     rights: 'O IMS informa que a imagem está em domínio público e permite download; citar autores e Acervo Instituto Moreira Salles.',
     use: 'Carta de 1831 feita a partir de observações dos autores e cartas consideradas mais exatas; fonte prioritária para a faixa oriental coberta.',
-    limitations: 'É uma das quatro folhas e não cobre todo o território brasileiro; a escala e a continuidade entre folhas precisam ser verificadas antes da georreferência.',
+    limitations: 'A ficha institucional identifica o registro como 1831, mas a inspeção visual automatizada do arquivo grande associado ao registro 89321 leu no quadro da imagem uma data impressa possivelmente 1834 e créditos parcialmente divergentes. A leitura automatizada não é prova conclusiva; a identidade material/edição precisa de conferência humana e esclarecimento do acervo. Até resolver a divergência, não usar esta folha para pontos de controle nem afirmar que as quatro imagens formam uma edição homogênea. A escala, grade, encaixe e pontos geográficos seguem sem validação.',
     status: 'image_review_pending'
   },
   {
@@ -138,7 +138,7 @@ export const cartographicSources: CartographicSource[] = [
     format: 'Litografia e aquarela sobre papel; suporte 70 × 53 cm; mancha 47,7 × 41,5 cm; imagem grande 4134 × 5487 px',
     rights: 'Domínio público; download liberado pelo IMS. Citar autores e Acervo Instituto Moreira Salles.',
     use: 'Segunda folha do mosaico cartográfico oriental de 1831, necessária para recompor a cobertura contínua.',
-    limitations: 'A posição da folha é confirmada pelo catálogo; a extensão exata das províncias visíveis e a junção com as demais folhas exigem inspeção visual e comparação das margens.',
+    limitations: 'A ficha institucional identifica o registro como 1831, mas a inspeção visual automatizada do arquivo grande associado ao registro 89321 leu no quadro da imagem uma data impressa possivelmente 1834 e créditos parcialmente divergentes. A leitura automatizada não é prova conclusiva; a identidade material/edição precisa de conferência humana e esclarecimento do acervo. Até resolver a divergência, não usar esta folha para pontos de controle nem afirmar que as quatro imagens formam uma edição homogênea. A escala, grade, encaixe e pontos geográficos seguem sem validação.',
     status: 'image_review_pending'
   },
   {
@@ -156,7 +156,7 @@ export const cartographicSources: CartographicSource[] = [
     format: 'Litografia e aquarela sobre papel; suporte 70,1 × 52,1 cm; mancha 49 × 41,5 cm; imagem grande 4134 × 5600 px',
     rights: 'Domínio público; download liberado pelo IMS. Citar autores e Acervo Instituto Moreira Salles.',
     use: 'Terceira folha do mosaico cartográfico oriental de 1831, necessária para recompor a cobertura contínua.',
-    limitations: 'A posição da folha é confirmada pelo catálogo; a extensão exata das províncias visíveis e a junção com as demais folhas exigem inspeção visual e comparação das margens.',
+    limitations: 'A ficha institucional identifica o registro como 1831, mas a inspeção visual automatizada do arquivo grande associado ao registro 89321 leu no quadro da imagem uma data impressa possivelmente 1834 e créditos parcialmente divergentes. A leitura automatizada não é prova conclusiva; a identidade material/edição precisa de conferência humana e esclarecimento do acervo. Até resolver a divergência, não usar esta folha para pontos de controle nem afirmar que as quatro imagens formam uma edição homogênea. A escala, grade, encaixe e pontos geográficos seguem sem validação.',
     status: 'image_review_pending'
   },
   {
@@ -174,7 +174,7 @@ export const cartographicSources: CartographicSource[] = [
     format: 'Litografia, aquarela e tinta metaloácida sobre papel; suporte 69,8 × 52,5 cm; mancha 49,1 × 45,4 cm; imagem grande 4134 × 5502 px',
     rights: 'Domínio público; download liberado pelo IMS. Citar autores e Acervo Instituto Moreira Salles.',
     use: 'Quarta folha do mosaico cartográfico oriental de 1831, necessária para recompor a cobertura contínua.',
-    limitations: 'A posição da folha é confirmada pelo catálogo; a extensão exata das províncias visíveis e a junção com as demais folhas exigem inspeção visual e comparação das margens.',
+    limitations: 'A ficha institucional identifica o registro como 1831, mas a inspeção visual automatizada do arquivo grande associado ao registro 89321 leu no quadro da imagem uma data impressa possivelmente 1834 e créditos parcialmente divergentes. A leitura automatizada não é prova conclusiva; a identidade material/edição precisa de conferência humana e esclarecimento do acervo. Até resolver a divergência, não usar esta folha para pontos de controle nem afirmar que as quatro imagens formam uma edição homogênea. A escala, grade, encaixe e pontos geográficos seguem sem validação.',
     status: 'image_review_pending'
   },
   {
