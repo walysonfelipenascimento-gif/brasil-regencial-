@@ -174,3 +174,13 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - O *Atlas do Império do Brasil* de Cândido Mendes é de 1868; será tratado apenas como fonte comparativa posterior, nunca como retrato direto da Regência.
 - **Estado da Etapa 1:** avançou de ausência de cartas específicas para catálogo de fontes primárias verificáveis. Ainda não concluída: as imagens precisam ser inspecionadas, as séries de folhas completadas, as cartas georreferenciadas e as geometrias validadas; cronologia e coordenadas dos eventos também exigem revisão documental.
 - Nenhum polígono provincial foi inventado ou publicado nesta atualização.
+
+
+## Continuidade — série Schlieben ampliada (13 de novembro de 2026)
+
+- Pesquisa adicional identificou três agrupamentos regionais da série de 1830: províncias 2–10 (Nordeste); províncias 11, 12, 17 e 18 (Centro-Sudeste); províncias 13, 14 e 15, além de ilhas 19 e quadro Q da República de Montevidéu (Sul/Atlântico).
+- Em conjunto com os registros previamente catalogados das províncias 1 (Pará) e 16 (Mato Grosso), os títulos da série nomeiam as 18 províncias do inventário de pesquisa.
+- A folha 2–10 traz a designação “Rio Grande” sem qualificação. O catálogo não a converte automaticamente em Rio Grande do Norte; a identificação permanece pendente de inspeção do original e confronto documental.
+- A folha 13–15 identifica São Paulo, Santa Catarina e São Pedro. “19” corresponde a ilhas, não a província; a República de Montevidéu aparece em quadro separado e não integra o território provincial brasileiro.
+- As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar oito registros cartográficos no total.
+- **Limite técnico:** títulos e registros de catálogo ainda não são linhas de limite verificadas. Nenhuma geometria foi criada. As folhas devem ser inspecionadas em alta resolução, com direitos de uso conferidos, antes de qualquer georreferenciamento.
