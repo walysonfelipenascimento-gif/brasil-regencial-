@@ -50,3 +50,10 @@ A função `calculateAffineFit` implementa ajuste afim por mínimos quadrados, c
 - O ajuste afim não corrige deformações locais do papel, digitalização ou projeção desconhecida.
 - Nenhum limiar universal de RMS foi definido: aceitação depende da escala, resolução, distribuição espacial dos pontos e finalidade da camada.
 - A coleção segue vazia enquanto as imagens originais e as coordenadas de referência não puderem ser verificadas.
+
+
+## Validação independente (leave-one-out)
+
+A função `validateAffineIndependently` implementa validação cruzada leave-one-out. Em cada rodada, um ponto é retirado, a transformação é recalculada com os demais e a coordenada prevista para o ponto excluído é comparada à coordenada de referência. O relatório inclui erro médio e máximo por ponto.
+
+São exigidos pelo menos cinco pontos revisados para manter quatro no ajuste de cada rodada. Esta validação é mais informativa que o RMS interno, mas ainda depende da qualidade das coordenadas de referência, da distribuição dos pontos e da adequação do modelo afim. Não substitui pontos de verificação externos independentes nem revisão cartográfica.
