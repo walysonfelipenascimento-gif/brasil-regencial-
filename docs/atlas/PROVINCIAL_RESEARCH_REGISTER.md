@@ -260,3 +260,16 @@ O visualizador do IMS foi percorrido para os quatro registros. A inspeção conf
 
 **Decisão:** não extrair fronteiras provinciais das prévias médias. A série permanece em inspeção visual pendente até que as versões grandes sejam examinadas e as linhas possam ser distinguidas de rios, relevo, molduras e outras convenções.
 
+
+
+## Mesa de cartografia — preparação do mosaico de 1831
+
+Foi criada a interface `src/components/CartographicWorkbench.tsx`, integrada ao painel do Atlas.
+
+- Apresenta as quatro folhas IMS em uma matriz 2×2, respeitando as posições catalogadas.
+- Permite selecionar cada folha, visualizar a prévia disponível e abrir a ficha do acervo ou a versão grande.
+- Exibe cobertura, dimensões/técnica, escala e direitos da folha selecionada.
+- Mantém aviso explícito de que as folhas ainda não foram alinhadas nem georreferenciadas.
+- A interface usa as URLs de prévia e download já catalogadas; não copia as imagens para o repositório nem presume autorização além do domínio público informado pelo IMS.
+
+**Próximo procedimento técnico:** obter os quatro arquivos grandes; conferir resolução, orientação e margens; testar alinhamento por feições comuns; registrar transformações e pontos de controle. Só após isso será possível preparar o mosaico e avaliar o georreferenciamento.
