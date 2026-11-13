@@ -197,3 +197,29 @@ O visualizador Stanford foi aberto para examinar a folha 1.
 - A cobertura atravessa regiões que hoje pertencem a mais de um país; não recortar a carta pelas fronteiras internacionais atuais.
 - **Decisão técnica:** fonte importante para estudar a Comarca do Rio Negro e o espaço amazônico em 1826, mas inadequada para obter medidas ou polígonos confiáveis sem georreferenciamento com controle e confronto documental. Os nomes e limites refletem o conhecimento e as convenções cartográficas da época.
 
+
+
+## Série completa de quatro folhas — mapa oriental de 1831 (Acervo IMS)
+
+A pesquisa por títulos e números de inventário confirmou que o IMS cataloga as quatro folhas separadamente. Todas pertencem à mesma carta original e compartilham autoria, edição, data de produção/publicação e a descrição de cobertura geral.
+
+| Posição | Registro IMS | Arquivo | Suporte e mancha |
+|---|---|---|---|
+| Superior esquerda | https://acervos.ims.com.br/index.php/Detail/objects/89321 | 005IB01979.jpg | 70 × 52,2 cm; mancha 47,8 × 45,5 cm |
+| Superior direita | https://acervos.ims.com.br/index.php/Detail/objects/89322 | 005IB01980.jpg | 70 × 53 cm; mancha 47,7 × 41,5 cm |
+| Inferior direita | https://acervos.ims.com.br/index.php/Detail/objects/89323 | 005IB01981.jpg | 70,1 × 52,1 cm; mancha 49 × 41,5 cm |
+| Inferior esquerda | https://acervos.ims.com.br/index.php/Detail/objects/89324 | 005IB01982.jpg | 69,8 × 52,5 cm; mancha 49,1 × 45,4 cm |
+
+**Título original transcrito nas quatro fichas:** *Karte von Ost-Brasilien. Carte géographique de la partie orientale de l'Empire du Brèsil en quatre Feiulles, contenant les Provinces maritimes de Pernambuco jusqu'à Rio de Janeiro, celle de Minas Geraës, et une partie des Provinces limitrophes, redigée d'après leurs propres observations et les cartes les plus exactes, et dediée a S.M. Don Pedro Empereur du Brésil par Guill. de Eschwege et Ch. Fr. Ph. de Martius, dresseé par I. Schwarzmann.*
+
+- **Data:** produção e publicação em 1831.
+- **Autoria:** Carl Friedrich Philipp von Martius, Wilhelm Ludwig von Eschwege e Joseph Anton Schwarzmann.
+- **Editores:** Martius e Johann Baptist von Spix.
+- **Impressão:** M. Lindauer.
+- **Obra:** *Atlas zur Reise in Brasilien*, de Spix e Martius.
+- **Técnica:** litografia; as folhas têm variações de aquarela e tinta conforme o exemplar.
+- **Direitos:** as quatro fichas do IMS informam domínio público e download liberado. Citar autores e Acervo Instituto Moreira Salles.
+- **Download em alta resolução:** cada registro oferece link “DownloadRepresentation”; os endereços específicos estão cadastrados em src/data/cartographicSources.ts.
+
+A confirmação das quatro folhas evita tratar a imagem superior esquerda isoladamente como se fosse o mapa inteiro. O próximo trabalho cartográfico é alinhar as quatro folhas pelas margens e elementos geográficos comuns, verificar deformações do papel e só então preparar um mosaico georreferenciado. A escala não foi informada nas fichas consultadas; não presumir escala nem aplicar transformação antes de pontos de controle.
+
