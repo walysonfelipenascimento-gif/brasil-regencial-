@@ -195,3 +195,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Licença confirmada: CC BY-NC-SA 3.0, uso não comercial com atribuição e compartilhamento pela mesma licença. O painel agora expõe os links de imagem, arquivo e licença.
 - Identificador persistente, manifesto IIIF e arquivo original digitalizado foram adicionados à ficha da fonte.
 - A imagem ainda não foi georreferenciada nem usada para extrair limites. Nenhum polígono criado.
+
+
+## Continuidade — cópias Stanford e correção de escala/data
+
+- Foram localizadas cópias digitais institucionais adicionais Stanford para as folhas Schlieben do Pará (província 1) e Nordeste (províncias 2–10), ambas com PURL, manifesto IIIF, arquivo JP2, dimensões e licença.
+- Os metadados Stanford datam essas folhas em 1826 e registram “Scale not determined”. A ficha meridional (13–15) também é de 1826 e tem escala não determinada. O catálogo do projeto foi corrigido para não aplicar a escala genérica de 1:2.000.000 a folhas para as quais o repositório primário não informa escala.
+- A série de mapas está sendo tratada como uma sequência publicada em partes entre 1825 e 1830, e não como um conjunto de folhas todas necessariamente impressas no mesmo ano.
+- As fichas das folhas 1, 2–10 e 13–15 agora têm acesso persistente Stanford, links IIIF/JP2 e licença CC BY-NC-SA 3.0. O uso não comercial exige atribuição e compartilhamento pela mesma licença.
+- A identificação “Rio Grande” na folha 2–10 continua sem expansão automática para Rio Grande do Norte.
