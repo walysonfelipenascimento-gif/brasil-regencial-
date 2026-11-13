@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import maplibregl from 'maplibre-gl';
+import type { HistoricalBoundaryCollection } from '@/data/historicalBoundaries';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 export type AtlasEvent = {
@@ -14,7 +15,7 @@ export type AtlasEvent = {
   coordinates: [number, number];
 };
 
-type Props = { events: AtlasEvent[]; year: number; layers: string[] };
+type Props = { events: AtlasEvent[]; year: number; layers: string[]; boundaries: HistoricalBoundaryCollection };
 
 const escapeHtml = (value: string) =>
   value.replace(/[&<>"']/g, character => ({
@@ -25,7 +26,7 @@ const escapeHtml = (value: string) =>
     "'": '&#39;'
   })[character] ?? character);
 
-export default function AtlasMap({ events, year, layers }: Props) {
+export default function AtlasMap({ events, year, layers, boundaries }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const markers = useRef<maplibregl.Marker[]>([]);
@@ -65,6 +66,25 @@ export default function AtlasMap({ events, year, layers }: Props) {
     });
 
     instance.addControl(new maplibregl.NavigationControl({ showCompass: true }), 'top-right');
+    instance.on('load', () => {
+      if (instance.getSource('historical-boundaries')) return;
+      instance.addSource('historical-boundaries', {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] }
+      });
+      instance.addLayer({
+        id: 'historical-boundaries-fill',
+        type: 'fill',
+        source: 'historical-boundaries',
+        paint: { 'fill-color': '#65b9d8', 'fill-opacity': 0.12 }
+      });
+      instance.addLayer({
+        id: 'historical-boundaries-line',
+        type: 'line',
+        source: 'historical-boundaries',
+        paint: { 'line-color': '#8bd9f2', 'line-width': 2, 'line-opacity': 0.95 }
+      });
+    });
     map.current = instance;
 
     return () => {
@@ -74,6 +94,25 @@ export default function AtlasMap({ events, year, layers }: Props) {
       map.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    const instance = map.current;
+    if (!instance) return;
+
+    const updateHistoricalBoundaries = () => {
+      const source = instance.getSource('historical-boundaries') as maplibregl.GeoJSONSource | undefined;
+      if (!source) return;
+      const features = boundaries.features.filter(feature => {
+        const startYear = Number(feature.properties.validFrom.slice(0, 4));
+        const endYear = Number(feature.properties.validTo.slice(0, 4));
+        return startYear <= year && endYear >= year;
+      });
+      source.setData({ type: 'FeatureCollection', features } as never);
+    };
+
+    if (instance.isStyleLoaded()) updateHistoricalBoundaries();
+    else instance.once('load', updateHistoricalBoundaries);
+  }, [boundaries, year]);
 
   useEffect(() => {
     const instance = map.current;
@@ -166,6 +205,11 @@ export default function AtlasMap({ events, year, layers }: Props) {
       <div className="mapContextLabel">
         BASE CONTEMPORÂNEA DE REFERÊNCIA · EVENTOS 1831–1840
       </div>
+      {boundaries.features.length > 0 && (
+        <div className="historicalBoundaryMapLabel">
+          LIMITES PROVINCIAIS HISTÓRICOS · FEIÇÕES APROVADAS
+        </div>
+      )}
     </div>
   );
 }
