@@ -1,13 +1,13 @@
-type Position = number[];
-type PolygonGeometry = { type: 'Polygon'; coordinates: Position[][] };
-type MultiPolygonGeometry = { type: 'MultiPolygon'; coordinates: Position[][][] };
-type HistoricalGeometry = PolygonGeometry | MultiPolygonGeometry;
-type HistoricalBoundaryFeature = {
+export type HistoricalPosition = number[];
+export type HistoricalPolygonGeometry = { type: 'Polygon'; coordinates: HistoricalPosition[][] };
+export type HistoricalMultiPolygonGeometry = { type: 'MultiPolygon'; coordinates: HistoricalPosition[][][] };
+export type HistoricalGeometry = HistoricalPolygonGeometry | HistoricalMultiPolygonGeometry;
+export type HistoricalBoundaryFeature = {
   type: 'Feature';
   geometry: HistoricalGeometry;
   properties: HistoricalBoundaryProperties;
 };
-type HistoricalBoundaryProperties = {
+export type HistoricalBoundaryProperties = {
   provinceId: string;
   historicalName: string;
   validFrom: string;
@@ -24,7 +24,7 @@ type HistoricalBoundaryProperties = {
   reviewedBy: string[];
   publicationStatus: 'draft' | 'under_review' | 'approved';
 };
-type HistoricalBoundaryCollection = {
+export type HistoricalBoundaryCollection = {
   type: 'FeatureCollection';
   features: HistoricalBoundaryFeature[];
 };
