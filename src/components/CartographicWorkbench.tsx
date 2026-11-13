@@ -104,7 +104,7 @@ export default function CartographicWorkbench() {
           <li><b>Registrar</b><span>Pixel na imagem original, coordenada, fonte e método de identificação.</span></li>
           <li><b>Revisar</b><span>Conferir a correspondência e anotar a incerteza antes de usar o ponto.</span></li>
         </ol>
-        <small>Nenhum ponto foi inventado. A coleta começa após acesso às imagens originais em resolução suficiente.</small>\n        <div className="controlPointMethod"><b>Motor de georreferenciamento preparado</b><span>Ajuste afim por mínimos quadrados · resíduos por ponto · RMS interno · rejeição de pontos colineares. O RMS não substitui validação independente.</span></div>
+        <small>Nenhum ponto foi inventado. A coleta começa após acesso às imagens originais em resolução suficiente.</small>\n        <div className="controlPointMethod"><b>Motor de georreferenciamento preparado</b><span>Ajuste afim por mínimos quadrados · resíduos por ponto · RMS interno · rejeição de pontos colineares. O RMS não substitui validação independente. Também foi preparado o teste leave-one-out: cada ponto é temporariamente excluído e previsto pelos demais (mínimo de 5 pontos).</span></div>
       </div>
       <p className="workbenchNotice">
         Estado do trabalho: quatro folhas catalogadas e exibidas em sua disposição de referência.
