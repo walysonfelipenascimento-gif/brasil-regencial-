@@ -213,3 +213,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Na folha Pará/Rio Negro, a imagem mostra a rede hidrográfica amazônica e referências a Pará, Rio Negro e províncias/territórios vizinhos, além de partes do que hoje são Colômbia e Peru. Linhas administrativas aparecem, mas não há escala determinada nem graticule claro.
 - As duas folhas parecem legíveis o bastante para uma etapa futura de digitalização assistida, mas não foram aceitas para vetorização nem usadas para gerar polígonos. Sem escala, pontos de controle e documentação complementar, não é possível converter linhas da imagem em coordenadas confiáveis.
 - A ficha do Pará foi atualizada com a cobertura da Comarca do Rio Negro e as limitações observadas.
+
+
+## Continuidade — quatro folhas do mapa oriental de 1831 localizadas (13 de novembro de 2026)
+
+- A busca no Acervo Instituto Moreira Salles confirmou os quatro registros individuais da carta de Eschwege, Martius e Schwarzmann: superior esquerda (89321), superior direita (89322), inferior direita (89323) e inferior esquerda (89324).
+- As quatro folhas são de 1831, pertencem ao Atlas zur Reise in Brasilien e têm autoria, edição e imprenta identificadas. O IMS informa domínio público e download liberado, com citação de autores e acervo.
+- As dimensões de suporte/mancha variam ligeiramente entre folhas; a composição final deve acomodar essas diferenças e possíveis deformações do papel.
+- O catálogo técnico agora registra as quatro folhas separadamente, com links para visualização e download, direitos e limitações. O painel do Atlas lista cada uma.
+- **Ainda não georreferenciadas:** a escala não foi informada nas fichas. O mosaico precisa ser alinhado, comparado por feições comuns e ajustado por pontos de controle com erro RMS documentado antes de qualquer extração de limites.
