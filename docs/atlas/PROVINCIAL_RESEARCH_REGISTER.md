@@ -223,3 +223,25 @@ A pesquisa por títulos e números de inventário confirmou que o IMS cataloga a
 
 A confirmação das quatro folhas evita tratar a imagem superior esquerda isoladamente como se fosse o mapa inteiro. O próximo trabalho cartográfico é alinhar as quatro folhas pelas margens e elementos geográficos comuns, verificar deformações do papel e só então preparar um mosaico georreferenciado. A escala não foi informada nas fichas consultadas; não presumir escala nem aplicar transformação antes de pontos de controle.
 
+
+
+## Complemento documental — carta de São Pedro e mapa do teatro da guerra (1839)
+
+A ficha da Biblioteca Nacional Digital de Portugal confirma os metadados completos da carta provincial de São Pedro:
+
+- **Título:** *Mappa da Provincia de San Pedro: publicado segundo uma carta manuscripta*.
+- **Levantamento:** sob direção do Visconde de São Leopoldo por José Pedro César, Coronel de Milícias.
+- **Geógrafo:** Thunot Duvotenay; **gravura:** Alexis Orgiazzi.
+- **Publicação:** Paris, Dépôt Général de la Guerre, 1839.
+- **Escala:** aproximadamente 1:700.000; 20 léguas portuguesas (18 ao grau) = 7,10 cm.
+- **Dimensões:** mapa 54,20 × 68 cm; folha 59 × 71 cm.
+- **Cota:** C.C. 1791 A.
+- **Registro persistente:** https://purl.pt/3994 ; **imagem de acesso/baixar:** https://dnet8ble6lm7w.cloudfront.net/maps/BRA/BRA0141.jpeg ; registro complementar: https://dia.upenn.edu/pt/maps/BRA0141/ ; exemplar citado na BnF: https://gallica.bnf.fr/ark:/12148/btv1b53099596d/f1.item .
+
+A Mapoteca do Instituto Histórico e Geográfico do Rio Grande do Sul confirmou o título e autoria do mapa temático de Dreys:
+- *Mappa do Theatro da Guerra na Provincia do Rio Grande de S. Pedro do Sul*, Nicolau Dreys, 1839.
+- Página do mapa: https://www.ihgrgs.org.br/mapoteca/cd_mapas_rs/CD/imagens/mapas/cap_3/301-59.htm
+- Imagem do mapa: https://www.ihgrgs.org.br/mapoteca/cd_mapas_rs/CD/imagens/mapas/cap_3/images/301-59.jpg
+- A Biblioteca Brasiliana Guita e José Mindlin/USP cataloga a obra de Dreys, publicada por J. Villeneuve no Rio de Janeiro em 1839, com xv, 216 páginas e mapa anexo: https://digital.bbm.usp.br/handle/bbm/7854 . O PDF do exemplar tem 57,84 MB e os direitos são reservados salvo indicação em contrário.
+- **Distinção:** o mapa de Dreys é temático do teatro da guerra; não deve ser usado como limite administrativo provincial.
+
