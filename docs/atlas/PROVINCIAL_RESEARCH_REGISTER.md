@@ -99,3 +99,38 @@ A pesquisa em catálogos de coleções cartográficas e bibliotecas identificou 
 - O *Atlas do Império do Brasil* de Cândido Mendes é de **1868**, posterior em 28 anos ao fim da Regência. Pode auxiliar comparação historiográfica, mas não deve ser usado como retrato direto de 1831–1840. Referência acadêmica: https://www.scielo.br/j/his/a/yfVmV5GwN9z6vBW6nJS4j4J/?lang=pt&ilang=es .
 - Próximo passo: inspecionar imagens em alta resolução, completar as folhas da série Schlieben e Martius/Eschwege e georreferenciar cada carta com pontos de controle distribuídos. Registrar transformação, erro RMS e incerteza.
 - Nenhum polígono foi criado nesta atualização; não há base para declarar fronteiras provinciais nacionais completas ou concluir a Etapa 1.
+
+
+## Ampliação da série provincial de Schlieben — folhas regionais de 1830
+
+A busca em catálogos de David Rumsey, Old Maps Online, Stanford e Ruderman Rare Maps permitiu identificar os agrupamentos regionais adicionais da série *Das Kaiserthum Brasilien*, do *Atlas von Amerika* (Leipzig, George Joachim Göschen, 1830), desenhada por Wilhelm Ernst August von Schlieben e litografada por W. Werner. A escala de 1:2.000.000 é informada pelos registros catalográficos da série.
+
+### Folha das províncias 2–10 — Nordeste
+Título catalogado: *Das Kaiserthum Brasilien Provinz 2. Maranho. 3. Piauy. 4. Ceara. 5. Rio Grande. 6. Prahyba. 7. Pernamubuco. 8. Alagoas. 9. Sergipe. 10. Bahia.*
+
+- Catálogo com transcrição do título e descrição da cobertura entre São Luís/Fortaleza e Salvador/Porto Seguro: https://raremaps.com/gallery/detail/0314gh/das-kaiserthum-brasilien-provinz-2-maranho-3-piauy-4-ceara-5-io-grande-6-prahyba-7-pernamubuco-8-alagoas-9-sergipe-10-bahia
+- Registro agregado da série no catálogo David Rumsey: https://www.davidrumsey.com/luna/servlet/view/all/where/South+America/Brazil/when/1830?sort=pub_list_no_initialsort%2Cpub_list_no%2Cseries_no
+- **Cautela:** o título abrevia a unidade 5 como “Rio Grande”. Não expandir automaticamente para Rio Grande do Norte até que a imagem e fontes coevas confirmem a identificação.
+
+### Folha das províncias 11, 12, 17 e 18 — Centro-Sudeste
+Título catalogado: *Das Kaiserthum Brasilien Provinz 11. Espirito Santo. 12. Rio De Janeiro, 17 Goyaz 18. Minas Geraes.*
+
+- Ficha com título, autoria e descrição geográfica: https://raremaps.com/gallery/detail/0318gh/das-kaiserthum-brasilien-provinz-11-espirito-santo-12-rio-de-janeiro17-goyaz-18-minas-geraes
+- Registro da série na David Rumsey: https://www.davidrumsey.com/luna/servlet/view/all/where/South+America/Brazil/when/1830?sort=pub_list_no_initialsort%2Cpub_list_no%2Cseries_no
+- A descrição de catálogo indica mapa centrado em Cidade de Goiás e Paracatu e abrangendo áreas vizinhas. É uma pista bibliográfica, não uma interpretação final da geometria.
+
+### Folha das províncias 13, 14 e 15, ilhas 19 e quadro Q — Sul
+- **Título catalogado:** *Das Kaiserthum Brasilien Provinz 13 S. Paulo, 14. S. Catharina. 15. S. Pedro 19 Die Inseln a. Fernado de Noronho b. Trinidade. Q. Die Rep. Montevideo (Banda Oriental)*.
+- Registro da Barry Lawrence Ruderman Map Collection, Stanford University: https://exhibits.stanford.edu/ruderman/catalog/mr595ky4847
+- Registro MODS da Stanford SearchWorks: https://searchworks.stanford.edu/view/mr595ky4847.mods
+- Registro agregado Old Maps Online: https://www.oldmapsonline.org/en/maps/7df4a937-c4fd-560a-8edb-f3ad28963ade
+- **Cautela:** o número 19 designa ilhas, não uma província. A República de Montevidéu aparece como quadro geográfico separado e não integra as províncias brasileiras.
+
+### O que a série permite afirmar — e o que não permite
+
+- Os catálogos identificam folhas que nomeiam as 18 províncias do inventário de pesquisa: Pará (1); Maranhão a Bahia (2–10); Espírito Santo, Rio de Janeiro, Goiás e Minas Gerais (11, 12, 17, 18); São Paulo, Santa Catarina e São Pedro (13–15); Mato Grosso (16).
+- A folha 2–10 agrupa nove províncias; a 11/12/17/18 quatro; a 13/14/15 e elementos adicionais do Atlântico Sul; outras folhas catalogadas cobrem Pará (1) e Mato Grosso (16).
+- A série é uma base comparativa útil para o estado cartográfico publicado em 1830. **Não é prova automática de que os limites permaneceram iguais durante todos os anos de 1831 a 1840.**
+- As fichas comerciais auxiliam na identificação bibliográfica, mas não concedem direitos de republicação. A busca por exemplares digitais institucionais e termos de uso continua obrigatória.
+- O mapa deve ser visualmente inspecionado antes de transcrever linhas de fronteira. O título sozinho não basta para desenhar polígonos.
+
