@@ -72,3 +72,18 @@ Condições de segurança cartográfica:
 - A confiança é classificada como alta ou média apenas segundo a relação entre o erro independente e o limite definido; revisão histórica e topológica continuam obrigatórias.
 
 A função exporta apenas um Polygon por chamada. Para feições multipartes, cada parte deve ser processada e revisada separadamente antes de compor um MultiPolygon. A saída ainda não é automaticamente publicada no atlas: deve passar pelo contrato de fronteiras históricas, revisão temporal, conferência de topologia e aprovação editorial.
+
+
+## Validação estrutural e topológica automatizada
+
+A validação de fronteiras agora verifica, além da estrutura GeoJSON e das faixas WGS84:
+
+- fechamento dos anéis e ao menos três vértices distintos;
+- área diferente de zero;
+- auto-interseções entre segmentos não adjacentes;
+- contenção dos anéis internos no anel externo;
+- cruzamentos e sobreposições entre anéis internos.
+
+Essas verificações são triagem computacional, não certificação cartográfica. A implementação usa testes geométricos planares sobre longitude/latitude e deve ser tratada com cautela em geometrias que cruzem a antimeridiana ou áreas muito extensas. A validação de sobreposição entre partes diferentes de um MultiPolygon e a conferência de fronteiras com cartas originais continuam dependentes de revisão especializada.
+
+A publicação exige pelo menos cinco pontos de controle, compatíveis com a validação independente leave-one-out. O intervalo temporal segue a convenção início inclusivo/fim exclusivo; a seleção anual inclui apenas feições cujo intervalo intersecta o ano consultado.
