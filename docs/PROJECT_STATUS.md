@@ -145,3 +145,13 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - GitHub Actions do commit `20aa1482`: concluído com sucesso. Também passaram os commits de documentação/auditoria `fb6843c5`, melhoria de busca `74222299` e ajuste CSS `fc2ee29e`.
 - O inventário provincial continua com 18 entradas catalogadas para pesquisa, mas sem geometrias validadas. O GeoJSON permanece deliberadamente vazio.
 - A publicação Render ainda não acompanha o HEAD do GitHub: último deploy `live` confirmado permanece `77034b3`. Não declarar as melhorias recentes disponíveis no site público até o Render confirmar o commit correspondente.
+
+## Continuidade — navegação móvel e CI (13 de novembro de 2026)
+
+- A navegação lateral anterior era ocultada em telas de até 650 px sem oferecer uma alternativa equivalente. Foi adicionada uma barra horizontal compacta com acesso às seis áreas principais: Visão geral, Atlas histórico, Linha do tempo, Expedições, Museu virtual e Arquivo histórico.
+- A navegação móvel indica a página atual com `aria-current="page"`; os controles também receberam destaque de foco por teclado.
+- Commits: `da73209b2e5cde590eeb84d97b11eb99e097c8df` (navegação móvel) e `6f385fbb4f5d994c745fc63215edd1c093dd83e2` (estilos responsivos).
+- O workflow de CI que agora inclui ESLint, TypeScript e build passou no commit `6be1e44fab50cf23260a7b72308b4a99ce5dc938` (execução 42300969997).
+- As alterações de navegação dispararam novas execuções de CI: `43459560590` e `43459564811`. No momento desta atualização, ambas ainda não tinham resultado final; conferir antes de considerar a alteração validada.
+- O deploy Render permanece sem confirmação para os commits recentes. O serviço ainda informa auto deploy habilitado; não disparar manualmente enquanto essa configuração estiver ativa. Último commit live conhecido: `77034b360d3b52615a4e52f1d0c1f456dc3190c2`.
+- A camada de fronteiras provinciais e a revisão documental dos eventos continuam como bloqueios históricos reais da Etapa 1. A barra móvel melhora o acesso à interface, mas não altera o estado de conclusão da etapa.
