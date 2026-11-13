@@ -57,3 +57,18 @@ A função `calculateAffineFit` implementa ajuste afim por mínimos quadrados, c
 A função `validateAffineIndependently` implementa validação cruzada leave-one-out. Em cada rodada, um ponto é retirado, a transformação é recalculada com os demais e a coordenada prevista para o ponto excluído é comparada à coordenada de referência. O relatório inclui erro médio e máximo por ponto.
 
 São exigidos pelo menos cinco pontos revisados para manter quatro no ajuste de cada rodada. Esta validação é mais informativa que o RMS interno, mas ainda depende da qualidade das coordenadas de referência, da distribuição dos pontos e da adequação do modelo afim. Não substitui pontos de verificação externos independentes nem revisão cartográfica.
+
+
+## Conversão de traçado em GeoJSON
+
+A função `createGeoreferencedPolygon` converte anéis digitalizados em pixels para coordenadas WGS84 usando o ajuste afim e produz uma feição GeoJSON com metadados de fonte, folha, quantidade de pontos, RMS interno e erros leave-one-out.
+
+Condições de segurança cartográfica:
+- Os vértices precisam ser traçados manualmente a partir da carta; a função não adivinha nem gera limites.
+- Todos os pontos de controle devem pertencer à mesma fonte e à mesma folha.
+- Os anéis devem conter ao menos quatro vértices e estar fechados.
+- O responsável precisa informar um limite máximo de erro independente, positivo e justificado pela escala e finalidade.
+- A exportação é bloqueada se a validação leave-one-out exceder esse limite.
+- A confiança é classificada como alta ou média apenas segundo a relação entre o erro independente e o limite definido; revisão histórica e topológica continuam obrigatórias.
+
+A função exporta apenas um Polygon por chamada. Para feições multipartes, cada parte deve ser processada e revisada separadamente antes de compor um MultiPolygon. A saída ainda não é automaticamente publicada no atlas: deve passar pelo contrato de fronteiras históricas, revisão temporal, conferência de topologia e aprovação editorial.
