@@ -109,8 +109,7 @@ export default function CartographicWorkbench() {
         <div className="controlPointMethod"><b>Motor de georreferenciamento preparado</b><span>Ajuste afim por mínimos quadrados · resíduos por ponto · RMS interno · rejeição de pontos colineares. O RMS não substitui validação independente. Também foi preparado o teste leave-one-out (mínimo de 5 pontos) e a exportação GeoJSON de polígonos traçados manualmente, bloqueada quando o erro independente ultrapassa o limite documentado.</span></div>
       </div>
       <p className="workbenchNotice">
-        Conferência documental concluída: as fichas IMS 89321–89324 e as representações 60356–60359 correspondem às quatro folhas da carta de 1831. A leitura visual cartográfica ainda está pendente: encaixe físico, escala, grade e georreferenciamento precisam ser verificados nos arquivos grandes.
-        Nenhum limite provincial é inferido a partir destas prévias.
+        Conferência catalográfica: as fichas IMS 89321–89324 descrevem quatro folhas de uma carta datada de 1831. Ressalva crítica: a inspeção automatizada do arquivo grande associado à folha 89321 leu uma data impressa possivelmente de 1834 e créditos parcialmente diferentes. Essa leitura ainda não foi confirmada por revisão humana nem esclarecida pelo IMS; por isso, a edição/representação não está materialmente validada. Grade, escala, encaixe e pontos de controle continuam pendentes. Nenhum ponto foi cadastrado e nenhum limite provincial foi georreferenciado.
       </p>
     </section>
   );
