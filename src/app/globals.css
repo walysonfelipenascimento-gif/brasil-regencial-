@@ -66,3 +66,35 @@
 
 /* Catálogo de fontes cartográficas primárias */
 .sourceList{display:grid;gap:12px;margin:12px 0 18px}.sourceItem{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;padding:12px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(255,255,255,.025)}.sourceYear{font-size:12px;font-weight:700;color:#c7a66a;letter-spacing:.04em;padding-top:2px}.sourceItem a{display:block;color:#e9d9b8;font-size:12px;font-weight:650;line-height:1.45;text-decoration:none}.sourceItem a:hover{text-decoration:underline}.sourceItem small{display:block;color:#a7a9b0;font-size:10px;line-height:1.5;margin-top:4px}.sourceItem .sourceStatus{color:#d5b879;margin-top:7px;font-weight:650}
+
+
+.cartographyWorkbench{margin:18px 0 20px;padding:15px;border:1px solid rgba(203,177,125,.24);border-radius:14px;background:linear-gradient(145deg,rgba(204,174,119,.075),rgba(255,255,255,.018));}
+.workbenchHeading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:13px}
+.workbenchKicker{font-size:9px;letter-spacing:.16em;color:#c9a86e;font-weight:750}
+.workbenchHeading h3{font:500 19px 'Playfair Display';margin:5px 0}
+.workbenchHeading p{font-size:10px;line-height:1.55;color:#9da6ad;margin:0;max-width:440px}
+.workbenchCount{font-size:9px;letter-spacing:.1em;color:#d7c095;border:1px solid rgba(203,177,125,.35);padding:6px 8px;border-radius:99px;white-space:nowrap}
+.sheetGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.sheetTile{min-width:0;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:0;background:#0b1015;color:#f3eee4;text-align:left;cursor:pointer}
+.sheetTileActive{border-color:#d1ae70;box-shadow:0 0 0 1px rgba(209,174,112,.4)}
+.sheetTileImage{display:block;width:100%;aspect-ratio:1.5;background-size:cover;background-position:center;filter:saturate(.75);transition:filter .2s}
+.sheetTile:hover .sheetTileImage,.sheetTileActive .sheetTileImage{filter:saturate(1)}
+.sheetTileLabel{display:block;padding:7px 8px;font-size:9px;color:#d9d0bf}
+.sheetTilePlaceholder{display:block;aspect-ratio:1.5;padding:20px;font-size:10px;color:#9ca3aa}
+.selectedSheet{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.09)}
+.selectedSheetPreview{position:relative;display:block;overflow:hidden;border-radius:8px;background:#080b0f}
+.selectedSheetPreview>span{display:block;aspect-ratio:1.35;background-size:contain;background-position:center;background-repeat:no-repeat}
+.selectedSheetPreview small{position:absolute;right:8px;bottom:8px;background:rgba(7,10,13,.84);padding:5px 7px;border-radius:4px;font-size:8px;letter-spacing:.1em;color:#fff}
+.selectedSheetYear{font-size:9px;color:#c8a66d;letter-spacing:.1em;text-transform:uppercase}
+.selectedSheetInfo h4{font:500 16px 'Playfair Display';margin:5px 0 7px;color:#f1e9da}
+.selectedSheetInfo>p{font-size:10px;line-height:1.55;color:#aab1b6;margin:0 0 10px}
+.selectedSheetInfo dl{display:grid;gap:7px;margin:0}
+.selectedSheetInfo dl div{display:grid;gap:2px}
+.selectedSheetInfo dt{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#c5a46d}
+.selectedSheetInfo dd{font-size:9px;line-height:1.5;color:#aeb5bb;margin:0}
+.selectedSheetActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.selectedSheetActions a{font-size:9px;color:#e1c58f;text-decoration:none;border:1px solid rgba(203,177,125,.3);border-radius:6px;padding:7px 9px}
+.selectedSheetActions a:hover{text-decoration:underline}
+.workbenchNotice{font-size:9px;line-height:1.55;color:#c1a978;background:rgba(198,164,104,.07);border-left:2px solid #b99a64;padding:8px 9px;margin:12px 0 0}
+@media(min-width:1000px){.selectedSheet{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}.sheetTileImage{aspect-ratio:1.75}}
+@media(prefers-reduced-motion:reduce){.sheetTileImage{transition:none}}
