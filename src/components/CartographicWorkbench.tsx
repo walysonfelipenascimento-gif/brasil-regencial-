@@ -83,7 +83,8 @@ export default function CartographicWorkbench() {
             </dl>
             <div className="selectedSheetActions">
               <a href={selected.url} target="_blank" rel="noreferrer">Ficha do acervo ↗</a>
-              {selected.downloadUrl && <a href={selected.downloadUrl} target="_blank" rel="noreferrer">Baixar versão grande ↗</a>}
+              {selected.downloadUrl && <a href={selected.downloadUrl} target="_blank" rel="noreferrer">Baixar arquivo do acervo ↗</a>}
+              {selected.highResolutionUrl && <a href={selected.highResolutionUrl} target="_blank" rel="noreferrer">Abrir imagem em alta resolução ↗</a>}
             </div>
           </div>
         </div>
