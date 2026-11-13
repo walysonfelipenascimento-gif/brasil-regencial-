@@ -169,3 +169,31 @@ Nos três registros, Stanford descreve mapa não colorido com dimensões física
 
 A folha 2–10 usa “Rio Grande” sem qualificação. O catálogo preserva essa forma original e não a transforma em Rio Grande do Norte sem confirmação documental. A folha do Pará inclui partes da Colômbia e do Peru, conforme descrição Stanford, e não deve ser recortada por fronteiras atuais.
 
+
+
+## Inspeção visual preliminar — folha Nordeste (1826), Stanford
+
+O visualizador Stanford foi aberto e ampliado para inspeção da digitalização da folha 2–10.
+
+- **Identificação:** https://purl.stanford.edu/jt436cm9609
+- **Imagem IIIF:** https://stacks.stanford.edu/image/iiif/jt436cm9609/0314gh/full/425,/0/default.jpg
+- **Manifesto:** https://purl.stanford.edu/jt436cm9609/iiif/manifest
+- A imagem apresenta o título geral “DAS KAISERTHUM BRASILIEN PROVINZ” e os nomes de províncias listados no título do catálogo: Maranho, Piauy, Ceara, Rio Grande, Prahyba, Pernambuco, Alagoas, Sergipe e Bahia.
+- A inspeção do visualizador reportou linhas internas finas, rios nomeados e alguns trechos com perda/fade. Não há escala gráfica ou legenda explícita; a ficha Stanford informa “Scale not determined”.
+- A leitura “Rio Grande” permanece pendente de confirmação histórica. A tentativa de leitura ampliada do navegador sugeriu associação ao Rio Grande do Norte, mas a ficha catalográfica não explicita “do Norte”; não converter essa hipótese em dado fechado.
+- A ficha Stanford data a folha em ca. 1826. Portanto, ela serve como antecedente cartográfico próximo, não como retrato exato de todo o período 1831–1840.
+- **Decisão técnica:** a qualidade parece suficiente para uma futura digitalização assistida, mas ainda não é aceite para vetorização automática nem para publicação de limites. Precisamos validar pontos de controle, transformação cartográfica, erro RMS, coerência entre rios/topônimos e documentação independente.
+
+## Inspeção visual preliminar — folha Pará/Rio Negro (1826), Stanford
+
+O visualizador Stanford foi aberto para examinar a folha 1.
+
+- **Identificação:** https://purl.stanford.edu/jp189rv3526
+- **Imagem IIIF:** https://stacks.stanford.edu/image/iiif/jp189rv3526/0316gh/full/full/0/default.jpg
+- **Manifesto:** https://purl.stanford.edu/jp189rv3526/iiif/manifest
+- **Título:** *Das Kaiserthum Brasilien Provinz 1 Para und zwar Comarca C. Rio Negro (with parts of Columbia and Peru)*.
+- A imagem mostra a bacia amazônica e uma extensa rede hidrográfica; a ficha e a inspeção identificam referências como Pará, Rio Negro, Amazonas/Solimões, Madeira, Tapajós, Xingu, Juruá e Purus, além de topônimos históricos.
+- Linhas administrativas e internacionais aparecem no desenho, mas não há escala gráfica nem escala determinada nos metadados. A inspeção não identificou graticule claro nem rosa dos ventos.
+- A cobertura atravessa regiões que hoje pertencem a mais de um país; não recortar a carta pelas fronteiras internacionais atuais.
+- **Decisão técnica:** fonte importante para estudar a Comarca do Rio Negro e o espaço amazônico em 1826, mas inadequada para obter medidas ou polígonos confiáveis sem georreferenciamento com controle e confronto documental. Os nomes e limites refletem o conhecimento e as convenções cartográficas da época.
+
