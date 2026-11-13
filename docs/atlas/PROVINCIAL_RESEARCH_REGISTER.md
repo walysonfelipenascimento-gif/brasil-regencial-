@@ -134,3 +134,24 @@ Título catalogado: *Das Kaiserthum Brasilien Provinz 11. Espirito Santo. 12. Ri
 - As fichas comerciais auxiliam na identificação bibliográfica, mas não concedem direitos de republicação. A busca por exemplares digitais institucionais e termos de uso continua obrigatória.
 - O mapa deve ser visualmente inspecionado antes de transcrever linhas de fronteira. O título sozinho não basta para desenhar polígonos.
 
+
+
+## Inspeção do registro Stanford — folha meridional Schlieben
+
+A consulta ao registro e ao manifesto IIIF da Stanford University Libraries confirmou metadados específicos que corrigem a atribuição genérica anterior:
+
+- **Identificador persistente:** https://purl.stanford.edu/mr595ky4847
+- **Título:** *Das Kaiserthum Brasilien Provinz 13 S. Paulo, 14. S. Catharina. 15 S. Pedro 19 Die Inseln a. Fernado de Noronho b. Trinidade . . . Die Rep. Montevideo (Banda Orientale)*.
+- **Contribuidor catalogado:** “Schleiben”; notas do registro atribuem a preparação a W. E. A. von Schlieben.
+- **Data no catálogo Stanford:** 1826 (não 1830). O atlas foi publicado em 15 partes entre 1825 e 1830; agregadores como Old Maps Online associam a série a 1830. Para esta folha específica, usar 1826 conforme o registro primário da Stanford, registrando a divergência.
+- **Escala:** não determinada pela Stanford. A escala 1:2.000.000 listada por Old Maps Online não está confirmada para esta folha individual; não usar como escala validada.
+- **Dimensões físicas catalogadas:** 10 × 8 polegadas.
+- **Digitalização:** canvas IIIF 1690 × 2222 pixels; arquivo original digitalizado JP2 de 705 KB.
+- **Imagem IIIF:** https://stacks.stanford.edu/image/iiif/mr595ky4847%2F0315gh/full/full/0/default.jpg
+- **Download JP2:** https://stacks.stanford.edu/file/mr595ky4847/0315gh.jp2
+- **Manifesto IIIF:** https://purl.stanford.edu/mr595ky4847/iiif/manifest
+- **MODS:** https://purl.stanford.edu/mr595ky4847.mods
+- **Licença:** CC BY-NC-SA 3.0 — https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode . A Stanford declara uso não comercial, atribuição e compartilhamento pela mesma licença; uso comercial requer contato com rumseymapcenter@stanford.edu.
+- **Cobertura descrita:** sul do Brasil e Uruguai, de Rio de Janeiro a Montevidéu e ao Rio da Prata. A ficha nomeia São Paulo, Santa Catarina e São Pedro; as ilhas aparecem separadamente, assim como a República de Montevidéu.
+
+A ficha no catálogo do Atlas foi corrigida para 1826, escala “não determinada”, PURL persistente, imagem, arquivo JP2 e licença. O painel oferece links separados para imagem, arquivo e licença. Esta inspeção valida a ficha e a disponibilidade do arquivo, mas **não substitui a leitura cartográfica detalhada nem a georreferência**.
