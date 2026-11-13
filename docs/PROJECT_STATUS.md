@@ -182,7 +182,7 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Em conjunto com os registros previamente catalogados das províncias 1 (Pará) e 16 (Mato Grosso), os títulos da série nomeiam as 18 províncias do inventário de pesquisa.
 - A folha 2–10 traz a designação “Rio Grande” sem qualificação. O catálogo não a converte automaticamente em Rio Grande do Norte; a identificação permanece pendente de inspeção do original e confronto documental.
 - A folha 13–15 identifica São Paulo, Santa Catarina e São Pedro. “19” corresponde a ilhas, não a província; a República de Montevidéu aparece em quadro separado e não integra o território provincial brasileiro.
-- As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar oito registros cartográficos no total.
+- As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar onze registros cartográficos no total após o acréscimo das quatro folhas do mapa oriental de 1831.
 - **Limite técnico:** títulos e registros de catálogo ainda não são linhas de limite verificadas. Nenhuma geometria foi criada. As folhas devem ser inspecionadas em alta resolução, com direitos de uso conferidos, antes de qualquer georreferenciamento.
 
 
@@ -222,3 +222,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - As dimensões de suporte/mancha variam ligeiramente entre folhas; a composição final deve acomodar essas diferenças e possíveis deformações do papel.
 - O catálogo técnico agora registra as quatro folhas separadamente, com links para visualização e download, direitos e limitações. O painel do Atlas lista cada uma.
 - **Ainda não georreferenciadas:** a escala não foi informada nas fichas. O mosaico precisa ser alinhado, comparado por feições comuns e ajustado por pontos de controle com erro RMS documentado antes de qualquer extração de limites.
+
+
+## Continuidade — metadados e acesso visual das cartas de 1839
+
+- A ficha da Biblioteca Nacional Digital de Portugal confirma a carta de São Pedro de 1839, escala aproximada 1:700.000, autoria do levantamento por José Pedro César sob direção do Visconde de São Leopoldo, geógrafo Thunot Duvotenay e gravador Alexis Orgiazzi. A cota do exemplar digitalizado é C.C. 1791 A.
+- A University of Pennsylvania oferece imagem direta da carta e registra a referência à Bibliothèque nationale de France.
+- O IHGRGS confirmou o título e autoria do mapa de teatro da guerra de Nicolau Dreys (1839), com imagem digital acessível. A obra associada também foi conferida no catálogo BBM/USP; o PDF é de 57,84 MB e o registro mantém direitos reservados salvo indicação em contrário.
+- O catálogo técnico agora tem **11 registros cartográficos**: seis registros/folhas da série Schlieben (incluindo três folhas Stanford de 1826 e uma folha regional ainda catalogada por agregadores); quatro folhas da carta oriental de 1831; carta provincial de São Pedro de 1839; e mapa temático de Dreys de 1839. (A contagem por fonte e por folha deve ser entendida conforme os itens cadastrados no código; o total exato é o comprimento do catálogo.)
+- Imagens e downloads diretos foram adicionados ao painel quando o acervo os disponibiliza. Direitos são respeitados por registro: Stanford CC BY-NC-SA 3.0; IMS domínio público com atribuição; os demais exigem consulta aos termos do custodiante.
