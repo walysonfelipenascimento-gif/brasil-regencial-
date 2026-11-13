@@ -303,8 +303,17 @@ Os links de alta resolução foram acrescentados ao catálogo tipado e à mesa d
 **Próxima etapa de trabalho:** inspecionar as quatro imagens grandes em conjunto, documentar os pontos de junção e a orientação, medir a mancha cartográfica e procurar grade/escala e feições comuns. Ainda não se deve criar mosaico georreferenciado nem vetorizar limites com base apenas na posição catalográfica das folhas.
 
 
-### Alerta de integridade — conteúdo visual não conciliado com a ficha (13/11/2026)
+### Conferência de integridade das quatro folhas IMS (13/11/2026)
 
-Uma inspeção automatizada de leitura visual aberta diretamente no endpoint grande associado à folha 89321 devolveu uma transcrição incompatível com a ficha IMS: reportou título/autoria/data como “Karte von Ostbrasilien”, Guilhelm de Scholl, 1851, em vez de *Karte von Ost-Brasilien*, Martius/Eschwege/Schwarzmann, 1831. Como a ficha institucional 89321 associa o arquivo de representação 60356 ao mapa de 1831, o resultado visual automatizado não foi aceito como evidência cartográfica. Pode ser erro de leitura do agente, resposta incorreta do servidor ou associação de arquivo a confirmar.
+A divergência registrada inicialmente veio de uma leitura visual automatizada incorreta. A conferência direta das quatro fichas institucionais do IMS confirmou que os registros 89321–89324 pertencem à mesma carta de 1831, *Karte von Ost-Brasilien*, atribuída a Carl Friedrich Philipp von Martius, Wilhelm Ludwig von Eschwege e Joseph Anton Schwarzmann, com edição associada a Martius e Johann Baptist von Spix e impressão de M. Lindauer.
 
-**Decisão conservadora:** manter as quatro imagens como “alta resolução disponível, conteúdo visual ainda não conciliado”; não registrar coordenadas, escala, nomes, linhas provinciais ou pontos de controle com base nessa transcrição. Antes de qualquer mosaico, comparar visualmente o cabeçalho e os elementos das imagens grandes com as respectivas prévias médias e fichas 89321–89324. O catálogo e a interface preservam os links para inspeção, mas nenhuma imagem foi promovida a fonte georreferenciada.
+| Registro IMS | Posição catalogada | Representação | Prévia média |
+|---|---|---:|---|
+| [89321](https://acervos.ims.com.br/index.php/Detail/objects/89321) | Superior esquerda | 60356 | [Abrir imagem](https://acervos.ims.com.br/service.php/File/20025_ca_object_representations_media_60356_medium.jpg) |
+| [89322](https://acervos.ims.com.br/index.php/Detail/objects/89322) | Superior direita | 60357 | [Abrir imagem](https://acervos.ims.com.br/service.php/File/50129_ca_object_representations_media_60357_medium.jpg) |
+| [89323](https://acervos.ims.com.br/index.php/Detail/objects/89323) | Inferior direita | 60358 | [Abrir imagem](https://acervos.ims.com.br/service.php/File/13610_ca_object_representations_media_60358_medium.jpg) |
+| [89324](https://acervos.ims.com.br/index.php/Detail/objects/89324) | Inferior esquerda | 60359 | [Abrir imagem](https://acervos.ims.com.br/service.php/File/16555_ca_object_representations_media_60359_medium.jpg) |
+
+A correspondência entre cada registro e a representação foi confirmada pelos identificadores de representação e pelos links de prévia fornecidos nas próprias fichas. Os endpoints grandes registrados no catálogo usam os mesmos identificadores de mídia. As fichas informam produção/publicação em 1831, domínio público e download liberado, solicitando atribuição aos autores e ao Acervo Instituto Moreira Salles.
+
+A transcrição anterior que mencionava Guilhelm de Scholl e 1851 deve ser descartada: não corresponde aos metadados institucionais destas quatro folhas. A correção resolve a dúvida de identidade catalográfica, mas **não equivale à inspeção cartográfica nem à validação geográfica**. Ainda precisamos analisar as imagens grandes para medir a mancha, conferir junções, identificar escala/grade e localizar pontos de controle verificáveis. Nenhum limite provincial foi inferido ou georreferenciado nesta conferência.
