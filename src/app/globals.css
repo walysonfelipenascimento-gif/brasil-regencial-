@@ -132,3 +132,7 @@
 .controlPointSteps b{color:#d9c49c;font-weight:600}
 .controlPointSteps span{color:#9daab2}
 .controlPointPanel>small{display:block;border-top:1px solid rgba(255,255,255,.08);padding-top:8px;margin-top:9px;color:#c5a978;font-size:8px;line-height:1.5}
+
+.controlPointMethod{display:grid;gap:4px;margin-top:9px;padding:9px;border:1px solid rgba(116,151,171,.2);border-radius:7px;background:rgba(42,75,92,.12)}
+.controlPointMethod b{font-size:9px;color:#d7e0e4;font-weight:650}
+.controlPointMethod span{font-size:8px;line-height:1.5;color:#9eafb8}
