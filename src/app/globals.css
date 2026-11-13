@@ -120,3 +120,15 @@
 .sheetPickerButtonActive{border-color:#c9a96b;color:#f0dfbf;background:rgba(203,177,125,.12)}
 @media(min-width:1000px){.mosaicSheetImage{aspect-ratio:1.5}}
 @media(max-width:420px){.mosaicSheetCaption{display:block}.mosaicSheetCaption small{display:block;margin-top:3px}}
+
+
+.controlPointPanel{margin-top:13px;padding:13px;border:1px solid rgba(116,151,171,.22);border-radius:9px;background:linear-gradient(145deg,rgba(55,91,111,.12),rgba(8,13,18,.5))}
+.controlPointPanelHead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.controlPointPanelHead h4{font:500 15px 'Playfair Display';color:#e8e2d7;margin:5px 0 0}
+.controlPointCount{font-size:8px;letter-spacing:.08em;border:1px solid rgba(203,177,125,.28);border-radius:99px;padding:6px 8px;color:#d5bd91;white-space:nowrap}
+.controlPointPanel>p{font-size:9px;line-height:1.55;color:#aeb8bf;margin:9px 0}
+.controlPointSteps{display:grid;gap:7px;list-style:none;padding:0;margin:0;counter-reset:control}
+.controlPointSteps li{display:grid;grid-template-columns:74px minmax(0,1fr);gap:8px;align-items:start;font-size:9px;line-height:1.45}
+.controlPointSteps b{color:#d9c49c;font-weight:600}
+.controlPointSteps span{color:#9daab2}
+.controlPointPanel>small{display:block;border-top:1px solid rgba(255,255,255,.08);padding-top:8px;margin-top:9px;color:#c5a978;font-size:8px;line-height:1.5}
