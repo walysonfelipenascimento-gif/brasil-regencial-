@@ -182,7 +182,7 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Em conjunto com os registros previamente catalogados das províncias 1 (Pará) e 16 (Mato Grosso), os títulos da série nomeiam as 18 províncias do inventário de pesquisa.
 - A folha 2–10 traz a designação “Rio Grande” sem qualificação. O catálogo não a converte automaticamente em Rio Grande do Norte; a identificação permanece pendente de inspeção do original e confronto documental.
 - A folha 13–15 identifica São Paulo, Santa Catarina e São Pedro. “19” corresponde a ilhas, não a província; a República de Montevidéu aparece em quadro separado e não integra o território provincial brasileiro.
-- As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar onze registros cartográficos no total após o acréscimo das quatro folhas do mapa oriental de 1831.
+- As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar onze registros cartográficos no total: cinco registros da série Schlieben, quatro folhas da carta oriental de 1831 e duas cartas de 1839.
 - **Limite técnico:** títulos e registros de catálogo ainda não são linhas de limite verificadas. Nenhuma geometria foi criada. As folhas devem ser inspecionadas em alta resolução, com direitos de uso conferidos, antes de qualquer georreferenciamento.
 
 
