@@ -136,3 +136,25 @@
 .controlPointMethod{display:grid;gap:4px;margin-top:9px;padding:9px;border:1px solid rgba(116,151,171,.2);border-radius:7px;background:rgba(42,75,92,.12)}
 .controlPointMethod b{font-size:9px;color:#d7e0e4;font-weight:650}
 .controlPointMethod span{font-size:8px;line-height:1.5;color:#9eafb8}
+
+/* Atlas 2026 — painel editorial reorganizado */
+.atlasPage{max-width:1600px;margin:0 auto}.atlasPageHeading{margin-bottom:8px}.atlasPageHeading p{max-width:720px}
+.atlasLayoutModern{grid-template-columns:minmax(0,1fr) 320px;gap:14px;border:0;min-height:0;align-items:stretch}
+.atlasLayoutModern .mapCanvas{min-height:660px;border:1px solid rgba(201,169,107,.22);border-radius:16px;overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.22)}
+.atlasControlPanel{border:1px solid rgba(201,169,107,.2);border-radius:16px;padding:20px;background:linear-gradient(155deg,#172633,#101a24);display:flex;flex-direction:column;gap:18px}
+.atlasPanelIntro h3{font:500 22px 'Playfair Display';margin:7px 0}.atlasPanelIntro p,.atlasResearchCard>p,.atlasWorkbenchIntro p{font-size:11px;line-height:1.7;color:#aab4be;margin:0}
+.atlasControlGroup{border-top:1px solid rgba(255,255,255,.09);padding-top:14px}.atlasControlGroup h4{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d9c49c;margin:0 0 10px}
+.atlasControlGroup .layerToggle{margin:0;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.055)}.layerPending{font-size:9px;color:#87939c}
+.atlasYearHead{display:flex;justify-content:space-between;align-items:center}.atlasYearHead h4{margin:0}.atlasYearHead strong{font:500 27px 'Playfair Display';color:#d8bd88}
+.yearScale{display:flex;justify-content:space-between;font-size:9px;color:#87939c}.atlasEventGroup{min-height:0}.atlasEventGroup h4{display:flex;justify-content:space-between}.atlasEventGroup h4 span{color:#d8bd88}.atlasEventGroup .eventList{max-height:220px;overflow:auto;padding-right:4px}
+.atlasResearchGrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:14px;margin:18px 0}
+.atlasResearchCard{min-width:0;padding:22px;border:1px solid rgba(201,169,107,.18);border-radius:16px;background:linear-gradient(145deg,rgba(29,43,53,.9),rgba(15,24,33,.94))}
+.atlasResearchHeader{display:flex;justify-content:space-between;align-items:center;gap:10px}.atlasResearchCount{font-size:8px;letter-spacing:.1em;color:#d5bd91;border:1px solid rgba(203,177,125,.3);border-radius:99px;padding:6px 8px}
+.atlasResearchCard h3,.atlasWorkbenchIntro h2{font:500 24px 'Playfair Display';margin:9px 0}.provinceGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:16px}
+.provinceGrid .provinceItem{padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:9px;background:rgba(255,255,255,.025)}.provinceGrid .provinceItem span{font-size:10px}.provinceGrid .provinceItem small{font-size:8px}
+.atlasSourcesCard .sourceList{max-height:440px;overflow:auto;padding-right:5px}
+.atlasWorkbenchSection{margin:18px 0;padding:24px;border:1px solid rgba(201,169,107,.22);border-radius:18px;background:radial-gradient(ellipse at 88% 0%,rgba(201,169,107,.09),transparent 38%),linear-gradient(145deg,#172633,#101923)}
+.atlasWorkbenchIntro{max-width:700px}.atlasWorkbenchIntro h2{font-size:29px}.atlasWorkbenchSection .cartographyWorkbench{border:0;background:transparent;padding:0;margin-top:18px}.atlasWorkbenchSection .sheetMosaic{max-width:820px}.atlasWorkbenchSection .selectedSheet{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:1050px){.atlasLayoutModern{grid-template-columns:minmax(0,1fr) 285px}.atlasLayoutModern .mapCanvas{min-height:560px}}
+@media(max-width:760px){.atlasLayoutModern{grid-template-columns:1fr}.atlasLayoutModern .mapCanvas{min-height:470px}.atlasControlPanel{display:grid;grid-template-columns:1fr 1fr;gap:15px}.atlasPanelIntro,.atlasEventGroup{grid-column:1/-1}.atlasResearchGrid{grid-template-columns:1fr}.atlasWorkbenchSection{padding:17px}.atlasWorkbenchSection .selectedSheet{grid-template-columns:1fr}}
+@media(max-width:520px){.atlasControlPanel{display:block}.atlasControlGroup{margin-top:14px}.atlasResearchCard{padding:16px}.provinceGrid{grid-template-columns:1fr 1fr}.atlasWorkbenchIntro h2{font-size:25px}}
