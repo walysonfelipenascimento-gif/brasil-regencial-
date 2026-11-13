@@ -184,3 +184,14 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - A folha 13–15 identifica São Paulo, Santa Catarina e São Pedro. “19” corresponde a ilhas, não a província; a República de Montevidéu aparece em quadro separado e não integra o território provincial brasileiro.
 - As novas fichas foram incluídas em src/data/cartographicSources.ts; o painel do Atlas passa a apresentar oito registros cartográficos no total.
 - **Limite técnico:** títulos e registros de catálogo ainda não são linhas de limite verificadas. Nenhuma geometria foi criada. As folhas devem ser inspecionadas em alta resolução, com direitos de uso conferidos, antes de qualquer georreferenciamento.
+
+
+## Inspeção de imagem e metadados — Stanford (13 de novembro de 2026)
+
+- O navegador TinyFish inspecionou o registro persistente Stanford da folha meridional de Schlieben e consultou diretamente o manifesto IIIF e MODS.
+- Correção: a folha individual é datada de **1826** pela Stanford, embora agregadores associem o conjunto do Atlas von Amerika a 1830 e a obra tenha sido publicada em partes entre 1825 e 1830. A data específica de cada folha deve prevalecer sobre a data genérica do atlas.
+- Correção: Stanford informa **escala não determinada**. A escala 1:2.000.000 que aparece em Old Maps Online não foi confirmada para essa folha individual.
+- Resolução disponível: 1690 × 2222 px; arquivo JP2 705 KB; dimensões físicas catalogadas 10 × 8 polegadas.
+- Licença confirmada: CC BY-NC-SA 3.0, uso não comercial com atribuição e compartilhamento pela mesma licença. O painel agora expõe os links de imagem, arquivo e licença.
+- Identificador persistente, manifesto IIIF e arquivo original digitalizado foram adicionados à ficha da fonte.
+- A imagem ainda não foi georreferenciada nem usada para extrair limites. Nenhum polígono criado.
