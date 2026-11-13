@@ -180,7 +180,7 @@ export const cartographicSources: CartographicSource[] = [
     institution: 'Biblioteca Nacional Digital de Portugal; exemplar digital também catalogado pela University of Pennsylvania',
     url: 'https://purl.pt/3994',
     imageUrl: 'https://dnet8ble6lm7w.cloudfront.net/maps/BRA/BRA0141.jpeg',
-    downloadUrl: 'https://dia.upenn.edu/pt/maps/BRA0141/',
+    downloadUrl: 'https://dnet8ble6lm7w.cloudfront.net/maps/BRA/BRA0141.jpeg',
     coverage: 'Província de São Pedro',
     scale: 'Aproximadamente 1:700.000',
     format: 'Mapa impresso em preto e branco; 54,2 × 68 cm (folha 59 × 71 cm)',
