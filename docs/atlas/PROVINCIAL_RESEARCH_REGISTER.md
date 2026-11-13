@@ -155,3 +155,17 @@ A consulta ao registro e ao manifesto IIIF da Stanford University Libraries conf
 - **Cobertura descrita:** sul do Brasil e Uruguai, de Rio de Janeiro a Montevidéu e ao Rio da Prata. A ficha nomeia São Paulo, Santa Catarina e São Pedro; as ilhas aparecem separadamente, assim como a República de Montevidéu.
 
 A ficha no catálogo do Atlas foi corrigida para 1826, escala “não determinada”, PURL persistente, imagem, arquivo JP2 e licença. O painel oferece links separados para imagem, arquivo e licença. Esta inspeção valida a ficha e a disponibilidade do arquivo, mas **não substitui a leitura cartográfica detalhada nem a georreferência**.
+
+
+## Correção de metadados das folhas Schlieben no catálogo Stanford
+
+A pesquisa encontrou também o registro institucional da folha nordestina, permitindo substituir o link comercial por acesso persistente Stanford:
+
+- **Folha 2–10 (Nordeste):** PURL https://purl.stanford.edu/jt436cm9609 ; data catalogada 1826; escala não determinada; canvas 1698 × 2230 px; JP2 https://stacks.stanford.edu/file/jt436cm9609/0314gh.jp2 ; imagem IIIF https://stacks.stanford.edu/image/iiif/jt436cm9609%2F0314gh/full/full/0/default.jpg ; licença CC BY-NC-SA 3.0.
+- **Folha 1 (Pará/Rio Negro):** PURL https://purl.stanford.edu/jp189rv3526 ; data catalogada 1826; escala não determinada; canvas 2220 × 1679 px; JP2 https://stacks.stanford.edu/file/jp189rv3526/0316gh.jp2 ; imagem IIIF https://stacks.stanford.edu/image/iiif/jp189rv3526%2F0316gh/full/full/0/default.jpg ; licença CC BY-NC-SA 3.0.
+- **Folha 13–15 (Sul):** PURL https://purl.stanford.edu/mr595ky4847 ; data catalogada 1826; escala não determinada; canvas 1690 × 2222 px; JP2 https://stacks.stanford.edu/file/mr595ky4847/0315gh.jp2 ; imagem IIIF https://stacks.stanford.edu/image/iiif/mr595ky4847%2F0315gh/full/full/0/default.jpg ; licença CC BY-NC-SA 3.0.
+
+Nos três registros, Stanford descreve mapa não colorido com dimensões físicas 10 × 8 polegadas e o atlas como publicação em 15 partes entre 1825 e 1830. A data 1826 é a data específica fornecida pelo catálogo para cada folha consultada. Stanford declara escala não determinada; portanto, a escala genérica de 1:2.000.000 atribuída por agregadores não será usada como escala confirmada dessas folhas. A licença exige uso não comercial, atribuição e compartilhamento pela mesma licença.
+
+A folha 2–10 usa “Rio Grande” sem qualificação. O catálogo preserva essa forma original e não a transforma em Rio Grande do Norte sem confirmação documental. A folha do Pará inclui partes da Colômbia e do Peru, conforme descrição Stanford, e não deve ser recortada por fronteiras atuais.
+
