@@ -163,3 +163,95 @@ export function validateAffineIndependently(points: CartographicControlPoint[]):
     errorsByPoint
   };
 }
+
+
+export type PixelRing = Array<[number, number]>;
+export type GeoreferencedPolygonResult =
+  | { valid: false; errors: string[] }
+  | { valid: true; feature: {
+      type: 'Feature';
+      geometry: { type: 'Polygon'; coordinates: number[][][] };
+      properties: {
+        sourceId: string; sheetId: string; method: 'affine_least_squares';
+        controlPointCount: number; fitRmsMeters: number;
+        crossValidationMeanMeters: number; crossValidationMaxMeters: number;
+        confidence: 'medium' | 'high'; uncertaintyNote: string;
+      };
+    } };
+
+/**
+ * Converte um anel traçado em pixels para Polygon GeoJSON WGS84.
+ * Não traça limites automaticamente: recebe apenas vértices previamente
+ * digitalizados sobre a carta. O limite de erro deve ser definido e justificado
+ * pelo responsável cartográfico para a escala e finalidade da camada.
+ */
+export function createGeoreferencedPolygon(
+  pixelRings: PixelRing[],
+  points: CartographicControlPoint[],
+  maxAllowedCrossValidationErrorMeters: number,
+  uncertaintyNote: string
+): GeoreferencedPolygonResult {
+  const errors: string[] = [];
+  if (!Array.isArray(pixelRings) || pixelRings.length === 0) errors.push('É necessário ao menos um anel digitalizado.');
+  if (!Number.isFinite(maxAllowedCrossValidationErrorMeters) || maxAllowedCrossValidationErrorMeters <= 0) {
+    errors.push('Defina um limite de erro positivo, justificado para a escala e finalidade.');
+  }
+  if (typeof uncertaintyNote !== 'string' || !uncertaintyNote.trim()) errors.push('Registre a incerteza e as limitações da geometria.');
+  if (errors.length) return { valid: false, errors };
+
+  const fit = calculateAffineFit(points);
+  if (!fit.valid) return { valid: false, errors: fit.errors };
+  const independent = validateAffineIndependently(points);
+  if (!independent.valid) return { valid: false, errors: independent.errors };
+  if (independent.maxErrorMeters > maxAllowedCrossValidationErrorMeters) {
+    return { valid: false, errors: [`Erro independente máximo (${independent.maxErrorMeters.toFixed(1)} m) excede o limite definido (${maxAllowedCrossValidationErrorMeters.toFixed(1)} m).`] };
+  }
+
+  const coordinates: number[][][] = [];
+  pixelRings.forEach((ring, ringIndex) => {
+    if (!Array.isArray(ring) || ring.length < 4) {
+      errors.push(`Anel ${ringIndex + 1}: precisa de pelo menos quatro vértices.`);
+      return;
+    }
+    if (ring.some(([x, y]) => !Number.isFinite(x) || !Number.isFinite(y) || x < 0 || y < 0)) {
+      errors.push(`Anel ${ringIndex + 1}: pixels inválidos.`);
+      return;
+    }
+    const first = ring[0], last = ring[ring.length - 1];
+    if (first[0] !== last[0] || first[1] !== last[1]) {
+      errors.push(`Anel ${ringIndex + 1}: feche o anel repetindo o primeiro vértice.`);
+      return;
+    }
+    const latRad = fit.referenceLatitude * Math.PI / 180;
+    const lonScale = EARTH_RADIUS_METERS * Math.cos(latRad) * Math.PI / 180;
+    const latScale = EARTH_RADIUS_METERS * Math.PI / 180;
+    const transformed = ring.map(([x, y]) => {
+      const east = fit.coefficients.east[0] * x + fit.coefficients.east[1] * y + fit.coefficients.east[2];
+      const north = fit.coefficients.north[0] * x + fit.coefficients.north[1] * y + fit.coefficients.north[2];
+      return [fit.referenceLongitude + east / lonScale, fit.referenceLatitude + north / latScale];
+    });
+    if (transformed.some(([lon, lat]) => !Number.isFinite(lon) || !Number.isFinite(lat) || lon < -180 || lon > 180 || lat < -90 || lat > 90)) {
+      errors.push(`Anel ${ringIndex + 1}: transformação produziu coordenadas fora de WGS84.`);
+      return;
+    }
+    coordinates.push(transformed);
+  });
+  if (errors.length) return { valid: false, errors };
+  const confidence = independent.maxErrorMeters <= maxAllowedCrossValidationErrorMeters * 0.5 ? 'high' : 'medium';
+  return {
+    valid: true,
+    feature: {
+      type: 'Feature',
+      geometry: { type: 'Polygon', coordinates },
+      properties: {
+        sourceId: points[0].sourceId, sheetId: points[0].sheetId,
+        method: 'affine_least_squares', controlPointCount: points.length,
+        fitRmsMeters: fit.rmsMeters,
+        crossValidationMeanMeters: independent.meanErrorMeters,
+        crossValidationMaxMeters: independent.maxErrorMeters,
+        confidence,
+        uncertaintyNote
+      }
+    }
+  };
+}
