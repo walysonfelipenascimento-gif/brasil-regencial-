@@ -93,6 +93,19 @@ export default function CartographicWorkbench() {
         <span><i className="legendSheetDot" /> Folha selecionada</span>
         <span>As miniaturas preservam a proporção; não representam alinhamento geográfico calculado.</span>
       </div>
+      <div className="controlPointPanel">
+        <div className="controlPointPanelHead">
+          <div><span className="workbenchKicker">PRÓXIMO PROCESSO TÉCNICO</span><h4>Pontos de controle geográficos</h4></div>
+          <span className="controlPointCount">0 PONTOS VALIDOS</span>
+        </div>
+        <p>O registro técnico já está preparado. Cada ponto deverá ligar um detalhe identificável da carta a uma coordenada moderna documentada.</p>
+        <ol className="controlPointSteps">
+          <li><b>Identificar</b><span>Confluências, igrejas, núcleos urbanos ou marcos reconhecíveis.</span></li>
+          <li><b>Registrar</b><span>Pixel na imagem original, coordenada, fonte e método de identificação.</span></li>
+          <li><b>Revisar</b><span>Conferir a correspondência e anotar a incerteza antes de usar o ponto.</span></li>
+        </ol>
+        <small>Nenhum ponto foi inventado. A coleta começa após acesso às imagens originais em resolução suficiente.</small>
+      </div>
       <p className="workbenchNotice">
         Estado do trabalho: quatro folhas catalogadas e exibidas em sua disposição de referência.
         O encaixe físico, a escala e o georreferenciamento ainda precisam ser medidos com os arquivos grandes.
