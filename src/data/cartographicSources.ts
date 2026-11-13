@@ -5,6 +5,9 @@ export type CartographicSource = {
   year: number;
   institution: string;
   url: string;
+  imageUrl?: string;
+  downloadUrl?: string;
+  licenseUrl?: string;
   coverage: string;
   scale?: string;
   format: string;
@@ -81,15 +84,18 @@ export const cartographicSources: CartographicSource[] = [
     id: 'schlieben-south-1830',
     title: 'Das Kaiserthum Brasilien. Provinz 13, 14, 15 e 19; Q. Die Rep. Montevideo',
     authors: 'Wilhelm Ernst August von Schlieben; litografia de W. Werner; edição de George Joachim Göschen',
-    year: 1830,
-    institution: 'Barry Lawrence Ruderman Map Collection, Stanford University; David Rumsey Historical Map Collection; Old Maps Online',
-    url: 'https://exhibits.stanford.edu/ruderman/catalog/mr595ky4847',
+    year: 1826,
+    institution: 'Barry Lawrence Ruderman Map Collection, Stanford University Libraries; registro agregado no Old Maps Online',
+    url: 'https://purl.stanford.edu/mr595ky4847',
+    imageUrl: 'https://stacks.stanford.edu/image/iiif/mr595ky4847%2F0315gh/full/full/0/default.jpg',
+    downloadUrl: 'https://stacks.stanford.edu/file/mr595ky4847/0315gh.jp2',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode',
     coverage: 'São Paulo (13), Santa Catarina (14), São Pedro (15), ilhas atlânticas (19) e República de Montevidéu (quadro Q, território externo ao inventário provincial brasileiro)',
-    scale: '1:2.000.000 (série Schlieben, conforme Old Maps Online)',
-    format: 'Folha litográfica regional do Atlas von Amerika (1830)',
-    rights: 'Consultar as condições de uso do registro da Stanford e da coleção custodiante antes de republicar a imagem.',
+    scale: 'Não determinada (metadados Stanford); Old Maps Online lista 1:2.000.000 para a série, sem confirmação específica nesta folha',
+    format: 'Mapa impresso não colorido; 10 × 8 polegadas; digitalização JP2, canvas IIIF 1690 × 2222 px; Atlas von Europa publicado em partes entre 1825 e 1830',
+    rights: 'CC BY-NC-SA 3.0; uso não comercial, atribuição e compartilhamento pela mesma licença. Direitos comerciais exigem autorização do Stanford David Rumsey Map Center.',
     use: 'Identifica as províncias meridionais brasileiras em 1830 e ajuda a contextualizar a vizinhança platina.',
-    limitations: 'A designação 19 refere-se a ilhas, não a uma província. A República de Montevidéu não deve ser incluída no território brasileiro. Inspecionar a folha para interpretar limites e convenções cartográficas.',
+    limitations: 'Stanford cataloga a folha como 1826 e declara escala não determinada; isso prevalece para esta cópia sobre a data 1830/escala 1:2.000.000 atribuídas genericamente à série por agregadores. A designação 19 refere-se a ilhas, não a uma província. A República de Montevidéu não deve ser incluída no território brasileiro. Inspecionar a folha para interpretar limites e convenções cartográficas.',
     status: 'image_review_pending'
   },
   {
