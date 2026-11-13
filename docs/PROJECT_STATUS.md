@@ -204,3 +204,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - A série de mapas está sendo tratada como uma sequência publicada em partes entre 1825 e 1830, e não como um conjunto de folhas todas necessariamente impressas no mesmo ano.
 - As fichas das folhas 1, 2–10 e 13–15 agora têm acesso persistente Stanford, links IIIF/JP2 e licença CC BY-NC-SA 3.0. O uso não comercial exige atribuição e compartilhamento pela mesma licença.
 - A identificação “Rio Grande” na folha 2–10 continua sem expansão automática para Rio Grande do Norte.
+
+
+## Continuidade — inspeção visual de duas folhas Stanford (13 de novembro de 2026)
+
+- O visualizador foi aberto para as folhas Schlieben 2–10 (Nordeste) e 1 (Pará/Rio Negro), ambas catalogadas pela Stanford como ca. 1826.
+- Na folha Nordeste, o título e os rótulos provinciais são legíveis em zoom; linhas internas e rios aparecem, mas não há escala gráfica/legenda e a Stanford registra escala indeterminada. A identificação da unidade “Rio Grande” não foi fechada; o navegador sugeriu Rio Grande do Norte, mas o registro não explicita “do Norte”.
+- Na folha Pará/Rio Negro, a imagem mostra a rede hidrográfica amazônica e referências a Pará, Rio Negro e províncias/territórios vizinhos, além de partes do que hoje são Colômbia e Peru. Linhas administrativas aparecem, mas não há escala determinada nem graticule claro.
+- As duas folhas parecem legíveis o bastante para uma etapa futura de digitalização assistida, mas não foram aceitas para vetorização nem usadas para gerar polígonos. Sem escala, pontos de controle e documentação complementar, não é possível converter linhas da imagem em coordenadas confiáveis.
+- A ficha do Pará foi atualizada com a cobertura da Comarca do Rio Negro e as limitações observadas.
