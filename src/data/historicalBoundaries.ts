@@ -57,29 +57,138 @@ function isIsoDate(value: unknown): value is string {
   return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value;
 }
 
-function validateRing(ring: unknown, label: string, errors: string[]) {
+type Position2D = [number, number];
+
+function cross(a: Position2D, b: Position2D, c: Position2D): number {
+  return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
+}
+
+function onSegment(a: Position2D, b: Position2D, point: Position2D): boolean {
+  const epsilon = 1e-10;
+  return Math.abs(cross(a, b, point)) <= epsilon &&
+    point[0] >= Math.min(a[0], b[0]) - epsilon &&
+    point[0] <= Math.max(a[0], b[0]) + epsilon &&
+    point[1] >= Math.min(a[1], b[1]) - epsilon &&
+    point[1] <= Math.max(a[1], b[1]) + epsilon;
+}
+
+function segmentsIntersect(a: Position2D, b: Position2D, c: Position2D, d: Position2D): boolean {
+  const abC = cross(a, b, c), abD = cross(a, b, d);
+  const cdA = cross(c, d, a), cdB = cross(c, d, b);
+  if (((abC > 0 && abD < 0) || (abC < 0 && abD > 0)) &&
+      ((cdA > 0 && cdB < 0) || (cdA < 0 && cdB > 0))) return true;
+  return onSegment(a, b, c) || onSegment(a, b, d) ||
+    onSegment(c, d, a) || onSegment(c, d, b);
+}
+
+function ringArea(ring: Position2D[]): number {
+  let area = 0;
+  for (let i = 0; i < ring.length - 1; i++) {
+    area += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1];
+  }
+  return area / 2;
+}
+
+function ringSelfIntersects(ring: Position2D[]): boolean {
+  const segmentCount = ring.length - 1;
+  for (let i = 0; i < segmentCount; i++) {
+    for (let j = i + 1; j < segmentCount; j++) {
+      if (j === i + 1 || (i === 0 && j === segmentCount - 1)) continue;
+      if (segmentsIntersect(ring[i], ring[i + 1], ring[j], ring[j + 1])) return true;
+    }
+  }
+  return false;
+}
+
+function pointInRing(point: Position2D, ring: Position2D[]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 2; i < ring.length - 1; j = i++) {
+    const a = ring[i], b = ring[j];
+    if (onSegment(a, b, point)) return true;
+    const crosses = (a[1] > point[1]) !== (b[1] > point[1]) &&
+      point[0] < ((b[0] - a[0]) * (point[1] - a[1])) / (b[1] - a[1]) + a[0];
+    if (crosses) inside = !inside;
+  }
+  return inside;
+}
+
+function ringsIntersect(a: Position2D[], b: Position2D[]): boolean {
+  for (let i = 0; i < a.length - 1; i++) {
+    for (let j = 0; j < b.length - 1; j++) {
+      if (segmentsIntersect(a[i], a[i + 1], b[j], b[j + 1])) return true;
+    }
+  }
+  return false;
+}
+
+function validateRing(ring: unknown, label: string, errors: string[]): ring is Position2D[] {
   if (!Array.isArray(ring) || ring.length < 4) {
     errors.push(label + ': anel precisa de ao menos quatro posições');
-    return;
+    return false;
   }
 
+  let valid = true;
   for (const [index, position] of ring.entries()) {
     if (!Array.isArray(position) || position.length < 2 ||
         !Number.isFinite(position[0]) || !Number.isFinite(position[1])) {
       errors.push(label + ': coordenada inválida na posição ' + index);
+      valid = false;
       continue;
     }
     const [longitude, latitude] = position as number[];
     if (longitude < -180 || longitude > 180 || latitude < -90 || latitude > 90) {
       errors.push(label + ': coordenada fora dos limites WGS84 na posição ' + index);
+      valid = false;
     }
   }
 
-  const first = ring[0];
-  const last = ring[ring.length - 1];
-  if (Array.isArray(first) && Array.isArray(last) &&
-      (first[0] !== last[0] || first[1] !== last[1])) {
+  if (!valid) return false;
+  const positions = ring as Position2D[];
+  const first = positions[0], last = positions[positions.length - 1];
+  if (first[0] !== last[0] || first[1] !== last[1]) {
     errors.push(label + ': anel não está fechado');
+    valid = false;
+  }
+  const uniqueVertices = new Set(positions.slice(0, -1).map(point => point[0] + ',' + point[1]));
+  if (uniqueVertices.size < 3) {
+    errors.push(label + ': são necessários ao menos três vértices distintos');
+    valid = false;
+  }
+  if (Math.abs(ringArea(positions)) < 1e-12) {
+    errors.push(label + ': área nula ou degenerada');
+    valid = false;
+  }
+  if (ringSelfIntersects(positions)) {
+    errors.push(label + ': auto-interseção detectada; revise o traçado');
+    valid = false;
+  }
+  return valid;
+}
+
+function validatePolygonRings(rings: unknown, label: string, errors: string[]) {
+  if (!Array.isArray(rings) || rings.length === 0) {
+    errors.push(label + ': polígono sem anel');
+    return;
+  }
+  const validRings: Position2D[][] = [];
+  rings.forEach((ring, index) => {
+    if (validateRing(ring, label + ', anel ' + index, errors)) validRings[index] = ring;
+  });
+  const shell = validRings[0];
+  if (!shell) return;
+  validRings.slice(1).forEach((hole, index) => {
+    if (!hole) return;
+    if (!pointInRing(hole[0], shell) || ringsIntersect(shell, hole)) {
+      errors.push(label + ', anel interno ' + (index + 1) + ': deve estar contido no anel externo e não pode cruzá-lo');
+    }
+  });
+  for (let i = 1; i < validRings.length; i++) {
+    for (let j = i + 1; j < validRings.length; j++) {
+      const a = validRings[i], b = validRings[j];
+      if (a && b && (ringsIntersect(a, b) || pointInRing(a[0], b) || pointInRing(b[0], a))) {
+        errors.push(label + ': anéis internos se cruzam ou se sobrepõem');
+      }
+    }
   }
 }
 
@@ -90,22 +199,15 @@ function validateGeometry(geometry: unknown, errors: string[]) {
   }
 
   if (geometry.type === 'Polygon') {
-    if (geometry.coordinates.length === 0) errors.push('polígono sem anel');
-    geometry.coordinates.forEach((ring, index) => validateRing(ring, 'anel ' + index, errors));
+    validatePolygonRings(geometry.coordinates, 'polígono', errors);
     return;
   }
 
   if (geometry.type === 'MultiPolygon') {
     if (geometry.coordinates.length === 0) errors.push('multipolígono sem polígonos');
-    geometry.coordinates.forEach((polygon, polygonIndex) => {
-      if (!Array.isArray(polygon) || polygon.length === 0) {
-        errors.push('polígono ' + polygonIndex + ' sem anel');
-        return;
-      }
-      polygon.forEach((ring, ringIndex) =>
-        validateRing(ring, 'polígono ' + polygonIndex + ', anel ' + ringIndex, errors)
-      );
-    });
+    geometry.coordinates.forEach((polygon, index) =>
+      validatePolygonRings(polygon, 'polígono ' + index, errors)
+    );
     return;
   }
 
