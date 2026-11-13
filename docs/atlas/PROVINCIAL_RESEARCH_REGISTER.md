@@ -283,3 +283,21 @@ A mesa agora oferece dois modos:
 2. **Inspecionar folha:** exibe a prévia selecionada, alternância direta entre as quatro folhas, metadados, ficha de acervo e link de download da versão grande.
 
 A composição 2 × 2 é uma disposição de referência baseada nas posições descritas pelo catálogo, **não um mosaico de pixels já alinhado**. A verificação automática dos quatro endpoints de download grande não foi concluída porque o navegador de pesquisa retornou `target_unreachable`; por isso, os arquivos grandes ainda não foram obtidos nesta etapa. A interface não afirma que o encaixe ou a georreferência estejam prontos.
+
+
+## Acesso confirmado às digitalizações grandes das quatro folhas IMS (1831)
+
+A inspeção direta das fichas do Acervo IMS e dos endpoints de imagem confirmou que as quatro digitalizações em resolução grande estão acessíveis publicamente. Isso supera a limitação anterior das prévias médias e permite iniciar a etapa de leitura detalhada, sem presumir que o mapa já esteja alinhado ou georreferenciado.
+
+| Folha | Registro IMS | Arquivo grande confirmado | Dimensões em pixels |
+|---|---|---|---|
+| Superior esquerda | [89321](https://acervos.ims.com.br/index.php/Detail/objects/89321) | [Abrir imagem](https://acervos.ims.com.br/service.php/File/20025_ca_object_representations_media_60356_large.jpg) | 4134 × 5591 |
+| Superior direita | [89322](https://acervos.ims.com.br/index.php/Detail/objects/89322) | [Abrir imagem](https://acervos.ims.com.br/service.php/File/50129_ca_object_representations_media_60357_large.jpg) | 4134 × 5487 |
+| Inferior direita | [89323](https://acervos.ims.com.br/index.php/Detail/objects/89323) | [Abrir imagem](https://acervos.ims.com.br/service.php/File/13610_ca_object_representations_media_60358_large.jpg) | 4134 × 5600 |
+| Inferior esquerda | [89324](https://acervos.ims.com.br/index.php/Detail/objects/89324) | [Abrir imagem](https://acervos.ims.com.br/service.php/File/16555_ca_object_representations_media_60359_large.jpg) | 4134 × 5502 |
+
+As quatro fichas do IMS informam 1831 como data de produção/publicação e declaram domínio público com download liberado, solicitando atribuição aos autores seguida de “Acervo Instituto Moreira Salles”. As dimensões acima foram lidas nos metadados dos endpoints das próprias imagens grandes, não estimadas a partir das miniaturas.
+
+Os links de alta resolução foram acrescentados ao catálogo tipado e à mesa de cartografia. A interface agora separa a ficha institucional, o endpoint de download oferecido pelo acervo e a visualização direta da imagem grande. Os arquivos não foram copiados para o repositório.
+
+**Próxima etapa de trabalho:** inspecionar as quatro imagens grandes em conjunto, documentar os pontos de junção e a orientação, medir a mancha cartográfica e procurar grade/escala e feições comuns. Ainda não se deve criar mosaico georreferenciado nem vetorizar limites com base apenas na posição catalográfica das folhas.
