@@ -6,7 +6,8 @@ export type CartographicSource = {
   institution: string;
   url: string;
   imageUrl?: string;
-  downloadUrl?: string;\n  highResolutionUrl?: string;
+  downloadUrl?: string;
+  highResolutionUrl?: string;
   licenseUrl?: string;
   coverage: string;
   scale?: string;
