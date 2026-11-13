@@ -30,12 +30,12 @@ export const cartographicSources: CartographicSource[] = [
     imageUrl: 'https://stacks.stanford.edu/image/iiif/jp189rv3526%2F0316gh/full/full/0/default.jpg',
     downloadUrl: 'https://stacks.stanford.edu/file/jp189rv3526/0316gh.jp2',
     licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode',
-    coverage: 'Província do Pará e comarca indicada no título',
+    coverage: 'Província do Pará e Comarca do Rio Negro; a ficha Stanford informa que a folha também abrange partes da Colômbia e do Peru',
     scale: 'Não determinada (metadados Stanford)',
-    format: 'Mapa impresso não colorido; 10 × 8 polegadas; digitalização JP2, canvas IIIF 2220 × 1679 px',
+    format: 'Mapa impresso não colorido; 10 × 8 polegadas; digitalização JP2, canvas IIIF 2220 × 1679 px; imagem legível em zoom no visualizador Stanford',
     rights: 'CC BY-NC-SA 3.0; uso não comercial, atribuição e compartilhamento pela mesma licença. Direitos comerciais exigem autorização do Stanford David Rumsey Map Center.',
     use: 'Fonte cartográfica contemporânea ao início da Regência; candidata à leitura e georreferência do Pará.',
-    limitations: 'Stanford cataloga esta folha como 1826 e informa escala não determinada; não usar a escala genérica de 1:2.000.000 atribuída à série por agregadores. A cobertura inclui a província do Pará e partes do atual território colombiano e peruano; a extensão e a comarca devem ser lidas na imagem original.',
+    limitations: 'Stanford cataloga esta folha como 1826 e informa escala não determinada; não usar a escala genérica de 1:2.000.000 atribuída à série por agregadores. A inspeção visual identifica rios e linhas administrativas, mas a ausência de escala/graticule claro impede medição direta; não converter as linhas em limites modernos nem georreferenciar sem pontos de controle e revisão histórica.',
     status: 'image_review_pending'
   },
   {
