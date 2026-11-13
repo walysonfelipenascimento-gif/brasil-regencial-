@@ -257,3 +257,12 @@ Este adendo prevalece sobre observações antigas deste documento que diziam que
 - Selecionar uma folha no mosaico abre sua inspeção; a inspeção permite alternar entre as quatro folhas, consultar metadados, ficha e link de download.
 - O mosaico é explicitamente apresentado como disposição de referência, não como composição georreferenciada ou encaixe de pixels.
 - A tentativa de verificar os quatro endpoints de download em alta resolução retornou `target_unreachable`; não se afirma que os arquivos grandes foram baixados.
+
+
+## Continuidade — preparação dos pontos de controle
+
+- Criado `src/data/cartographicControlPoints.ts` com tipo de dados e função `validateControlPoint`.
+- O registro captura pixel da imagem original, coordenada EPSG:4326, fonte, método, confiança, incerteza e revisão.
+- A mesa cartográfica agora explica visualmente o fluxo identificar → registrar → revisar.
+- O painel informa zero pontos válidos, pois ainda não foi possível inspecionar os arquivos grandes; nenhum ponto foi estimado ou inventado.
+- O validador é estrutural: não calcula transformação, RMS nem substitui revisão cartográfica.
