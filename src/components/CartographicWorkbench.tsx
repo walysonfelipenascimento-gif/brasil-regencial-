@@ -105,11 +105,11 @@ export default function CartographicWorkbench() {
           <li><b>Registrar</b><span>Pixel na imagem original, coordenada, fonte e método de identificação.</span></li>
           <li><b>Revisar</b><span>Conferir a correspondência e anotar a incerteza antes de usar o ponto.</span></li>
         </ol>
-        <small>Nenhum ponto foi inventado. A coleta começa após acesso às imagens originais em resolução suficiente.</small>\n        <div className="controlPointMethod"><b>Motor de georreferenciamento preparado</b><span>Ajuste afim por mínimos quadrados · resíduos por ponto · RMS interno · rejeição de pontos colineares. O RMS não substitui validação independente. Também foi preparado o teste leave-one-out (mínimo de 5 pontos) e a exportação GeoJSON de polígonos traçados manualmente, bloqueada quando o erro independente ultrapassa o limite documentado.</span></div>
+        <small>Nenhum ponto foi inventado. A coleta começa após acesso às imagens originais em resolução suficiente.</small>
+        <div className="controlPointMethod"><b>Motor de georreferenciamento preparado</b><span>Ajuste afim por mínimos quadrados · resíduos por ponto · RMS interno · rejeição de pontos colineares. O RMS não substitui validação independente. Também foi preparado o teste leave-one-out (mínimo de 5 pontos) e a exportação GeoJSON de polígonos traçados manualmente, bloqueada quando o erro independente ultrapassa o limite documentado.</span></div>
       </div>
       <p className="workbenchNotice">
-        Estado do trabalho: quatro folhas catalogadas e exibidas em sua disposição de referência.
-        O encaixe físico, a escala e o georreferenciamento ainda precisam ser medidos com os arquivos grandes.
+        Conferência documental concluída: as fichas IMS 89321–89324 e as representações 60356–60359 correspondem às quatro folhas da carta de 1831. A leitura visual cartográfica ainda está pendente: encaixe físico, escala, grade e georreferenciamento precisam ser verificados nos arquivos grandes.
         Nenhum limite provincial é inferido a partir destas prévias.
       </p>
     </section>
