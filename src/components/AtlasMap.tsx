@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import maplibregl from 'maplibre-gl';
-import type { HistoricalBoundaryCollection } from '@/data/historicalBoundaries';
+import { getHistoricalBoundariesForYear, type HistoricalBoundaryCollection } from '@/data/historicalBoundaries';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 export type AtlasEvent = {
@@ -102,11 +102,7 @@ export default function AtlasMap({ events, year, layers, boundaries }: Props) {
     const updateHistoricalBoundaries = () => {
       const source = instance.getSource('historical-boundaries') as maplibregl.GeoJSONSource | undefined;
       if (!source) return;
-      const features = boundaries.features.filter(feature => {
-        const startYear = Number(feature.properties.validFrom.slice(0, 4));
-        const endYear = Number(feature.properties.validTo.slice(0, 4));
-        return startYear <= year && endYear >= year;
-      });
+      const features = getHistoricalBoundariesForYear(boundaries, year).features;
       source.setData({ type: 'FeatureCollection', features } as never);
     };
 
