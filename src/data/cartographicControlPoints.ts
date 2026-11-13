@@ -121,3 +121,45 @@ export function calculateAffineFit(points: CartographicControlPoint[]): AffineFi
     residuals, referenceLatitude, referenceLongitude
   };
 }
+
+
+export type CrossValidationResult =
+  | { valid: false; errors: string[] }
+  | { valid: true; method: 'leave_one_out'; meanErrorMeters: number; maxErrorMeters: number; errorsByPoint: { id: string; errorMeters: number }[] };
+
+/**
+ * Validação cruzada leave-one-out: cada ponto é retirado, o ajuste é refeito
+ * com os demais e a posição prevista é comparada à coordenada de referência.
+ * Requer >=5 pontos para manter pelo menos quatro no ajuste de cada rodada.
+ */
+export function validateAffineIndependently(points: CartographicControlPoint[]): CrossValidationResult {
+  if (points.length < 5) {
+    return { valid: false, errors: ['São necessários ao menos 5 pontos revisados para validação leave-one-out.'] };
+  }
+  const errorsByPoint: { id: string; errorMeters: number }[] = [];
+  for (let heldIndex = 0; heldIndex < points.length; heldIndex++) {
+    const held = points[heldIndex];
+    const training = points.filter((_, index) => index !== heldIndex);
+    const fit = calculateAffineFit(training);
+    if (!fit.valid) {
+      return { valid: false, errors: [`Não foi possível validar o ponto ${held.id}: ${fit.errors.join('; ')}`] };
+    }
+    const x = held.imagePixel.x, y = held.imagePixel.y;
+    const east = fit.coefficients.east[0] * x + fit.coefficients.east[1] * y + fit.coefficients.east[2];
+    const north = fit.coefficients.north[0] * x + fit.coefficients.north[1] * y + fit.coefficients.north[2];
+    const latRad = fit.referenceLatitude * Math.PI / 180;
+    const lonScale = EARTH_RADIUS_METERS * Math.cos(latRad) * Math.PI / 180;
+    const latScale = EARTH_RADIUS_METERS * Math.PI / 180;
+    const predictedLongitude = fit.referenceLongitude + east / lonScale;
+    const predictedLatitude = fit.referenceLatitude + north / latScale;
+    const deltaEast = (predictedLongitude - held.longitude) * lonScale;
+    const deltaNorth = (predictedLatitude - held.latitude) * latScale;
+    errorsByPoint.push({ id: held.id, errorMeters: Math.hypot(deltaEast, deltaNorth) });
+  }
+  return {
+    valid: true, method: 'leave_one_out',
+    meanErrorMeters: errorsByPoint.reduce((sum, item) => sum + item.errorMeters, 0) / errorsByPoint.length,
+    maxErrorMeters: Math.max(...errorsByPoint.map(item => item.errorMeters)),
+    errorsByPoint
+  };
+}
