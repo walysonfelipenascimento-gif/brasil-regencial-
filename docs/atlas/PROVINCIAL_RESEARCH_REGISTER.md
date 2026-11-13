@@ -301,3 +301,10 @@ As quatro fichas do IMS informam 1831 como data de produção/publicação e dec
 Os links de alta resolução foram acrescentados ao catálogo tipado e à mesa de cartografia. A interface agora separa a ficha institucional, o endpoint de download oferecido pelo acervo e a visualização direta da imagem grande. Os arquivos não foram copiados para o repositório.
 
 **Próxima etapa de trabalho:** inspecionar as quatro imagens grandes em conjunto, documentar os pontos de junção e a orientação, medir a mancha cartográfica e procurar grade/escala e feições comuns. Ainda não se deve criar mosaico georreferenciado nem vetorizar limites com base apenas na posição catalográfica das folhas.
+
+
+### Alerta de integridade — conteúdo visual não conciliado com a ficha (13/11/2026)
+
+Uma inspeção automatizada de leitura visual aberta diretamente no endpoint grande associado à folha 89321 devolveu uma transcrição incompatível com a ficha IMS: reportou título/autoria/data como “Karte von Ostbrasilien”, Guilhelm de Scholl, 1851, em vez de *Karte von Ost-Brasilien*, Martius/Eschwege/Schwarzmann, 1831. Como a ficha institucional 89321 associa o arquivo de representação 60356 ao mapa de 1831, o resultado visual automatizado não foi aceito como evidência cartográfica. Pode ser erro de leitura do agente, resposta incorreta do servidor ou associação de arquivo a confirmar.
+
+**Decisão conservadora:** manter as quatro imagens como “alta resolução disponível, conteúdo visual ainda não conciliado”; não registrar coordenadas, escala, nomes, linhas provinciais ou pontos de controle com base nessa transcrição. Antes de qualquer mosaico, comparar visualmente o cabeçalho e os elementos das imagens grandes com as respectivas prévias médias e fichas 89321–89324. O catálogo e a interface preservam os links para inspeção, mas nenhuma imagem foi promovida a fonte georreferenciada.
